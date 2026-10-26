@@ -1,0 +1,136 @@
+.section {
+  padding: 6.5rem 0;
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.75rem;
+  align-items: stretch;
+}
+
+.mapCol {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoCard {
+  background: var(--color-bg-secondary);
+  padding: 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.75rem;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--color-text-main);
+}
+
+.byApptBadge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-terracotta);
+  font-weight: 700;
+}
+
+.hoursList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.daysLabel {
+  font-weight: 500;
+  color: var(--color-text-main);
+}
+
+.timesLabel {
+  color: var(--color-text-muted);
+}
+
+.directList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.socialBox {
+  margin-bottom: 1.5rem;
+}
+
+.socialLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-light);
+  margin-bottom: 0.6rem;
+}
+
+.ctaBtn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .mapCol {
+    min-height: 440px;
+  }
+
+  .infoCard {
+    padding: 2rem 1.5rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .infoCard {
+    padding: 1.5rem 1.25rem;
+    border-radius: 14px;
+  }
+}

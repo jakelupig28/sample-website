@@ -1,0 +1,232 @@
+.lookbookSection {
+  background: var(--color-bg-primary);
+  position: relative;
+}
+
+.galleryFilter {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 500;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.filterBtn:hover {
+  border-color: var(--color-accent-gold);
+  color: var(--color-text-main);
+}
+
+.filterBtnActive {
+  background: var(--color-accent-gold);
+  color: #fff;
+  border-color: var(--color-accent-gold);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.galleryCard {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galleryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.galleryImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #f4eee5;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.galleryCard:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+.galleryBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #ffffff;
+}
+
+.galleryTag {
+  align-self: flex-start;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.galleryTitle {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: #181615;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+.galleryTechnique {
+  font-size: 0.85rem;
+  color: #615c54;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.galleryMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  border-top: 1px solid #eee8de;
+}
+
+.galleryStylist {
+  font-size: 0.8rem;
+  color: #181615;
+  font-weight: 600;
+}
+
+.galleryAction {
+  font-size: 0.8rem;
+  color: var(--color-accent-terracotta);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Lookbook Detail Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 17, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.modalCard {
+  background: #ffffff;
+  border-radius: 18px;
+  max-width: 1150px;
+  width: 92vw;
+  max-height: 88vh;
+  overflow: hidden;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+.modalImageCol {
+  position: relative;
+  height: 100%;
+  min-height: 360px;
+  background: #f6f3ee;
+}
+
+.modalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modalContentCol {
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.modalButtonRow {
+  padding-top: 1rem;
+  border-top: 1px solid #eee9e0;
+  display: flex;
+  gap: 0.75rem;
+}
+
+@media (max-width: 860px) {
+  .modalCard {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    width: 95vw;
+    overflow-y: auto;
+  }
+
+  .modalImageCol {
+    height: 230px;
+    min-height: 230px;
+    flex-shrink: 0;
+  }
+
+  .modalContentCol {
+    padding: 1.5rem 1.25rem;
+    overflow-y: visible;
+  }
+
+  .modalButtonRow {
+    flex-direction: column;
+  }
+
+  .modalButtonRow a, .modalButtonRow button {
+    width: 100%;
+    justify-content: center;
+  }
+}

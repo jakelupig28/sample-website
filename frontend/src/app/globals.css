@@ -1,0 +1,534 @@
+:root {
+  --font-serif: "Syne", "Bodoni Moda", Didot, serif;
+  --font-sans: "Plus Jakarta Sans", "Tenor Sans", "Manrope", sans-serif;
+  
+  --color-bg-primary: #fcfbf9;
+  --color-bg-secondary: #f6f3ee;
+  --color-bg-tertiary: #ebe5db;
+  --color-bg-dark: #121211;
+  --color-bg-dark-card: #1a1a18;
+  
+  --color-text-main: #191817;
+  --color-text-muted: #5e5a55;
+  --color-text-light: #8e8982;
+  --color-text-inverse: #fbf9f5;
+  
+  --color-accent-gold: #8c6d37;
+  --color-accent-gold-hover: #735728;
+  --color-accent-gold-light: #d6be96;
+  --color-accent-gold-subtle: rgba(140, 109, 55, 0.08);
+
+  --color-accent-terracotta: #cb6d3e;
+  --color-accent-terracotta-hover: #b55a2d;
+  --color-accent-terracotta-light: #fbeee7;
+  --color-accent-terracotta-subtle: rgba(203, 109, 62, 0.1);
+  
+  --color-border: #e8e3d8;
+  --color-border-dark: #262624;
+  
+  --shadow-sm: 0 2px 6px rgba(25, 24, 23, 0.04);
+  --shadow-md: 0 8px 24px rgba(25, 24, 23, 0.07);
+  --shadow-lg: 0 16px 40px rgba(25, 24, 23, 0.1);
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  /* Kyle Zantos Design Motion Principles: Tokens (Emil Kowalski + Jakub Krehel) */
+  --motion-instant: 100ms;
+  --motion-fast: 180ms;       /* Emil: micro-interactions, toggles, button presses */
+  --motion-base: 260ms;       /* Jakub: card elevations, dropdowns, border colors */
+  --motion-smooth: 380ms;     /* section entries, modal reveals, drawers */
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);    /* Fast out, silky settle */
+  --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.15); /* Tactile snap */
+  --transition-fast: var(--motion-fast) var(--motion-ease-out);
+  --transition-smooth: var(--motion-base) var(--motion-ease-out);
+}
+
+::selection {
+  background: var(--color-accent-terracotta);
+  color: #ffffff;
+}
+
+input, textarea {
+  caret-color: var(--color-accent-terracotta);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-main);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding: 6.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4.5rem 0;
+  }
+}
+
+/* Section Header Styles */
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--color-text-main);
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+/* Luxury Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-text-main);
+  color: #ffffff;
+  border: 1px solid var(--color-text-main);
+}
+
+.btn-primary:hover {
+  background: #2b2a28;
+  border-color: #2b2a28;
+  transform: translateY(-1px);
+}
+
+.btn-terracotta {
+  background: var(--color-accent-terracotta);
+  color: #ffffff;
+  border: 1px solid var(--color-accent-terracotta);
+  box-shadow: 0 4px 14px rgba(203, 109, 62, 0.28);
+}
+
+.btn-terracotta:hover {
+  background: var(--color-accent-terracotta-hover);
+  border-color: var(--color-accent-terracotta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(203, 109, 62, 0.36);
+}
+
+.btn-gold {
+  background: var(--color-accent-gold);
+  color: #fff;
+  border: 1px solid var(--color-accent-gold);
+}
+
+.btn-gold:hover {
+  background: var(--color-accent-gold-hover);
+  border-color: var(--color-accent-gold-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-accent-terracotta);
+  color: var(--color-accent-terracotta);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.55rem 1.35rem;
+  font-size: 0.825rem;
+}
+
+/* Distinction & Guarantee Banner (Fixes Image 1 unstyled layout) */
+.guaranteeBanner {
+  margin-top: 4.5rem;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.guaranteeTitle {
+  font-family: var(--font-serif);
+  font-size: 2.15rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.75rem;
+}
+
+.guaranteeText {
+  color: var(--color-text-muted);
+  font-size: 0.975rem;
+  line-height: 1.7;
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+}
+
+.guaranteePerks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 992px) {
+  .guaranteePerks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .guaranteePerks {
+    grid-template-columns: 1fr;
+  }
+}
+
+.perkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.perkIconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-accent-terracotta-light);
+  color: var(--color-accent-terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.perkTitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.25rem;
+}
+
+.perkDesc {
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* Glass & Card styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-md);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cfc8be;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-gold);
+}
+
+/* Animations and Transitions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Subpage Hero Banner */
+.page-hero {
+  padding: 5rem 0 3.5rem 0;
+  background: radial-gradient(circle at 80% 20%, rgba(244, 234, 228, 0.5) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(236, 217, 186, 0.4) 0%, transparent 50%),
+              var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.page-hero-title {
+  font-size: 3.5rem;
+  line-height: 1.15;
+  color: var(--color-text-main);
+  margin-bottom: 1rem;
+}
+
+.page-hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 650px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-light);
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent-gold);
+}
+
+.breadcrumb-current {
+  color: var(--color-accent-gold);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .page-hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ========================================================
+   IMPRESSIVE MOTION & SECTION TRANSITION SUITE
+   ======================================================== */
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes softPulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 14px rgba(203, 109, 62, 0.25);
+  }
+  50% {
+    box-shadow: 0 6px 22px rgba(203, 109, 62, 0.45);
+  }
+}
+
+@keyframes ambientBreath {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+}
+
+/* Universal Smooth Button Physics */
+.btn {
+  will-change: transform, box-shadow;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease !important;
+}
+
+.btn:hover {
+  transform: translateY(-2px) !important;
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98) !important;
+  transition-duration: var(--motion-instant) !important;
+}
+
+.btn svg {
+  transition: transform var(--motion-fast) var(--motion-ease-out);
+}
+
+.btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Card Hover Elevation Physics (Jakub Krehel: Subtle, high-production polish) */
+.trend-card {
+  transition: transform var(--motion-base) var(--motion-ease-out),
+              box-shadow var(--motion-base) var(--motion-ease-out),
+              border-color var(--motion-base) ease !important;
+  will-change: transform, box-shadow;
+}
+
+.trend-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 36px rgba(25, 24, 23, 0.09) !important;
+  border-color: rgba(203, 109, 62, 0.35) !important;
+}
+
+.trend-card img {
+  transition: transform 0.6s var(--motion-ease-out) !important;
+  will-change: transform;
+}
+
+.trend-card:hover img {
+  transform: scale(1.025) !important;
+}
+
+/* Interactive Link & Arrow Motion */
+a svg, button svg {
+  transition: transform var(--motion-fast) var(--motion-ease-out);
+}
+
+/* Floating Badges Micro-interaction */
+.floating-badge {
+  animation: subtleFloat 4s ease-in-out infinite;
+}
+
+/* Smooth Focus Rings */
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--color-accent-terracotta);
+  outline-offset: 3px;
+}
+
+/* Kyle Zantos Design Motion: Accessibility (prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

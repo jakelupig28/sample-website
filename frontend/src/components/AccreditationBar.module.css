@@ -1,0 +1,47 @@
+.barWrapper {
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.75rem 0;
+}
+
+.barContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pressLogos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.pressLogo {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: #8c857b;
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+
+.pressLogo:hover {
+  color: var(--color-accent-gold);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .barContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+  .pressLogos {
+    justify-content: center;
+    gap: 2rem;
+  }
+}

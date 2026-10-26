@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+/.pnp
+.pnp.*
+
+# Next.js build
+.next/
+frontend/.next/
+out/
+build/
+
+# Environment files
+.env*
+!.env.example
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.pem
+*.tsbuildinfo
+.vercel/

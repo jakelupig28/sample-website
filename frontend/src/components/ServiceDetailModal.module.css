@@ -1,0 +1,247 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(18, 16, 15, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalCard {
+  background: #ffffff;
+  border-radius: 18px;
+  max-width: 1150px;
+  width: 92vw;
+  max-height: 88vh;
+  overflow: hidden;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  position: relative;
+  border: 1px solid var(--color-border);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  height: 100%;
+  min-height: 380px;
+  background: #f6f3ee;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: rgba(23, 21, 19, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+}
+
+.contentCol {
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.35rem;
+}
+
+.profileTag {
+  font-size: 0.75rem;
+  color: var(--color-accent-terracotta);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.closeBtn {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #181615;
+  transition: all var(--transition-fast);
+}
+
+.closeBtn:hover {
+  background: #ffffff;
+  border-color: var(--color-accent-terracotta);
+  color: var(--color-accent-terracotta);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.2vw + 0.5rem, 2.1rem);
+  color: #181615;
+  line-height: 1.2;
+  margin: 0.35rem 0 0.5rem 0;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0.4rem 0 0.85rem 0;
+  font-size: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.priceTag {
+  background: rgba(203, 109, 62, 0.12);
+  color: var(--color-accent-terracotta);
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.durationTag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #544f47;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #5c5750;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.featureTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #181615;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  color: #4a453f;
+}
+
+.featureIconBox {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(203, 109, 62, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-terracotta);
+  flex-shrink: 0;
+}
+
+.actionFooter {
+  padding-top: 1rem;
+  border-top: 1px solid #eee9e0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footerNote {
+  font-size: 0.775rem;
+  color: #7a746c;
+}
+
+.buttonGrid {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 860px) {
+  .modalCard {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    width: 95vw;
+    overflow-y: auto;
+  }
+
+  .imageWrapper {
+    height: 230px;
+    min-height: 230px;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .contentCol {
+    padding: 1.5rem 1.25rem;
+    overflow-y: visible;
+  }
+
+  .buttonGrid {
+    flex-direction: column;
+  }
+
+  .buttonGrid .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
