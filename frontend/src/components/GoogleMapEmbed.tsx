@@ -95,13 +95,13 @@ export default function GoogleMapEmbed({
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <MapPin size={18} color="var(--color-accent-terracotta, #cb6d3e)" />
+          <MapPin size={18} strokeWidth={1.5} color="var(--color-accent-terracotta, #cb6d3e)" />
           <div>
             <div style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--color-text-main)" }}>
               {mapAddress}
             </div>
             <div style={{ fontSize: "0.75rem", color: "var(--color-text-light)" }}>
-              Christopher St (1) & West 4th St (A, C, E, B, D, F, M)
+              Christopher St (1) &amp; West 4th St (A, C, E, B, D, F, M)
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function GoogleMapEmbed({
             style={{ gap: "0.35rem", fontSize: "0.78rem" }}
             title="Reload Google Map Frame"
           >
-            <RefreshCw size={12} />
+            <RefreshCw size={12} strokeWidth={1.5} />
             <span>Reload Map</span>
           </button>
 
@@ -124,9 +124,9 @@ export default function GoogleMapEmbed({
             className="btn btn-terracotta btn-sm"
             style={{ gap: "0.4rem" }}
           >
-            <Navigation size={14} />
+            <Navigation size={14} strokeWidth={1.5} />
             <span>Get Directions</span>
-            <ExternalLink size={12} />
+            <ExternalLink size={12} strokeWidth={1.5} />
           </a>
         </div>
       </div>

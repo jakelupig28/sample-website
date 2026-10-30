@@ -315,7 +315,9 @@ export default function ContactPage() {
         </section>
       </ScrollReveal>
 
-      <Footer />
+      <ScrollReveal animation="fade-up" duration={720}>
+        <Footer />
+      </ScrollReveal>
     </main>
   );
 }

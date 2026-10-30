@@ -263,5 +263,33 @@
   }
   .mobileMenuBtn {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topBanner {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+  }
+  .navContainer {
+    height: 68px;
+  }
+  .brandName {
+    font-size: 1.35rem;
+  }
+  .brandSub {
+    font-size: 0.58rem;
+  }
+  .mobileDrawer {
+    max-width: 100%;
+    width: 100%;
   }
 }

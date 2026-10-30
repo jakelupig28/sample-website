@@ -192,9 +192,9 @@ export default function LookbookPage() {
                 <a
                   href={`tel:${SALON_INFO.phone}`}
                   className="btn btn-terracotta btn-sm"
-                  style={{ flex: 1, justifyContent: "center" }}
+                  style={{ flex: 1, justifyContent: "center", display: "inline-flex", alignItems: "center", gap: "0.45rem" }}
                 >
-                  <Phone size={14} />
+                  <Phone size={14} strokeWidth={1.5} />
                   <span>Call Atelier ({SALON_INFO.phone})</span>
                 </a>
                 <Link
@@ -210,7 +210,9 @@ export default function LookbookPage() {
         </div>
       )}
 
-      <Footer />
+      <ScrollReveal animation="fade-up" duration={720}>
+        <Footer />
+      </ScrollReveal>
     </main>
   );
 }

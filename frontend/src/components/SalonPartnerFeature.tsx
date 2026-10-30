@@ -43,7 +43,7 @@ export default function SalonPartnerFeature() {
               {points.map((pt, i) => (
                 <div key={i} className={styles.pointItem}>
                   <div className={styles.pointIcon}>
-                    <Check size={14} strokeWidth={3} />
+                    <Check size={13} strokeWidth={2.2} />
                   </div>
                   <div>
                     <h4 className={styles.pointTitle}>
@@ -59,8 +59,8 @@ export default function SalonPartnerFeature() {
 
             <div className={styles.actionsRow}>
               <Link href="/about" className="btn btn-terracotta">
-                <span>Discover Our Story & Stylists</span>
-                <ArrowUpRight size={15} />
+                <span>Discover Our Story &amp; Stylists</span>
+                <ArrowUpRight size={15} strokeWidth={1.5} />
               </Link>
               <Link href="/services" className="btn btn-secondary">
                 <span>View All Services</span>
@@ -84,7 +84,7 @@ export default function SalonPartnerFeature() {
             {/* Overlapping organic badge */}
             <div className={styles.organicBadge}>
               <div className={styles.badgeIcon}>
-                <Leaf size={20} />
+                <Leaf size={20} strokeWidth={1.5} />
               </div>
               <div>
                 <div className={styles.badgeTitle}>

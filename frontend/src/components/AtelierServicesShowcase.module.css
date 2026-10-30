@@ -263,10 +263,21 @@
   .filterRow {
     gap: 0.5rem;
     margin-bottom: 2rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.25rem 0.5rem 0.65rem 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .filterRow::-webkit-scrollbar {
+    display: none;
   }
   .filterBtn {
-    padding: 0.45rem 0.9rem;
-    font-size: 0.775rem;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
   .grid {
     grid-template-columns: 1fr;

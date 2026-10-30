@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { Phone, Mail, MessageSquare, Clock, ArrowUpRight } from "lucide-react";
 import GoogleMapEmbed from "./GoogleMapEmbed";
 import SocialLinks from "./SocialLinks";
 import { SALON_INFO } from "../data/salonData";
@@ -29,9 +30,10 @@ export default function SalonLocationSection() {
           <div className={styles.infoCard}>
             <div>
               <div className={styles.cardHeader}>
-                <h3 className={styles.cardTitle}>
-                  Visiting Hours
-                </h3>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.55rem" }}>
+                  <Clock size={18} strokeWidth={1.5} color="var(--color-accent-terracotta)" />
+                  <h3 className={styles.cardTitle}>Visiting Hours</h3>
+                </div>
                 <span className={styles.byApptBadge}>
                   By Appointment
                 </span>
@@ -47,17 +49,26 @@ export default function SalonLocationSection() {
               </div>
 
               <div className={styles.directList}>
-                <div>
-                  <strong>Concierge Phone:</strong>{" "}
-                  <a href={`tel:${SALON_INFO.phone}`} style={{ color: "var(--color-accent-terracotta)", fontWeight: 600 }}>
-                    {SALON_INFO.phone}
-                  </a>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                  <Phone size={14} strokeWidth={1.5} color="var(--color-accent-terracotta)" />
+                  <div>
+                    <strong style={{ color: "var(--color-text-main)" }}>Concierge Phone:</strong>{" "}
+                    <a href={`tel:${SALON_INFO.phone}`} style={{ color: "var(--color-accent-terracotta)", fontWeight: 600 }}>
+                      {SALON_INFO.phone}
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <strong>SMS / WhatsApp:</strong> +1 (212) 555-0199
+                <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                  <MessageSquare size={14} strokeWidth={1.5} color="var(--color-accent-gold)" />
+                  <div>
+                    <strong style={{ color: "var(--color-text-main)" }}>SMS / WhatsApp:</strong> +1 (212) 555-0199
+                  </div>
                 </div>
-                <div>
-                  <strong>Inquiries:</strong> {SALON_INFO.email}
+                <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                  <Mail size={14} strokeWidth={1.5} color="var(--color-accent-gold)" />
+                  <div>
+                    <strong style={{ color: "var(--color-text-main)" }}>Inquiries:</strong> {SALON_INFO.email}
+                  </div>
                 </div>
               </div>
 
@@ -70,7 +81,8 @@ export default function SalonLocationSection() {
             </div>
 
             <Link href="/contact" className={`btn btn-terracotta ${styles.ctaBtn}`}>
-              <span>Get Directions & Concierge Inquiries</span>
+              <span>Get Directions &amp; Concierge Inquiries</span>
+              <ArrowUpRight size={15} strokeWidth={1.5} />
             </Link>
           </div>
         </div>

@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   description: "Experience bespoke color formulations, editorial precision cuts, and organic scalp rituals at ÉLAN Salon & Atelier. Greenwich Village, New York.",
   keywords: ["luxury hair salon", "balayage nyc", "bespoke hair color", "scalp spa sanctuary", "editorial hair styling", "ÉLAN salon"],
   authors: [{ name: "ÉLAN Atelier Team" }],
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({

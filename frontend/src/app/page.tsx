@@ -72,7 +72,9 @@ export default function Home() {
       </ScrollReveal>
 
       {/* Modern Minimalist Footer */}
-      <Footer />
+      <ScrollReveal animation="fade-up" duration={750}>
+        <Footer />
+      </ScrollReveal>
     </main>
   );
 }

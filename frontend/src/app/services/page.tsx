@@ -286,7 +286,9 @@ export default function ServicesPage() {
         </section>
       </ScrollReveal>
 
-      <Footer />
+      <ScrollReveal animation="fade-up" duration={720}>
+        <Footer />
+      </ScrollReveal>
     </main>
   );
 }

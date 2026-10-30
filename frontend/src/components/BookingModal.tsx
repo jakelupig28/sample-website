@@ -91,10 +91,10 @@ export default function BookingModal({ isOpen, onClose, initialService }: Bookin
         <div className={styles.modalHeader}>
           <div>
             <h2 className={styles.modalTitle}>Reserve an Appointment</h2>
-            <p className={styles.modalSubtitle}>Haute Coiffure & Trichology Consultation</p>
+            <p className={styles.modalSubtitle}>Haute Coiffure &amp; Trichology Consultation</p>
           </div>
           <button className={styles.closeBtn} onClick={onClose} aria-label="Close modal">
-            <X size={18} />
+            <X size={18} strokeWidth={1.5} />
           </button>
         </div>
 
@@ -300,12 +300,12 @@ export default function BookingModal({ isOpen, onClose, initialService }: Bookin
                   onClick={() => setStep(2)}
                   className="btn btn-secondary btn-sm"
                 >
-                  <ArrowLeft size={15} />
+                  <ArrowLeft size={15} strokeWidth={1.5} />
                   <span>Back</span>
                 </button>
                 <button type="submit" className="btn btn-gold">
                   <span>Confirm Reservation</span>
-                  <CheckCircle2 size={16} />
+                  <CheckCircle2 size={16} strokeWidth={1.5} />
                 </button>
               </div>
             </form>
@@ -315,7 +315,7 @@ export default function BookingModal({ isOpen, onClose, initialService }: Bookin
           {step === 4 && (
             <div className={styles.confirmationCard}>
               <div className={styles.successIconBadge}>
-                <CheckCircle2 size={42} />
+                <CheckCircle2 size={38} strokeWidth={1.5} />
               </div>
               <h3 className={styles.confirmationTitle}>Appointment Reserved</h3>
               <p style={{ color: "var(--color-text-muted)", fontSize: "0.95rem" }}>

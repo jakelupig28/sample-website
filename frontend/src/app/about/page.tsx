@@ -790,7 +790,9 @@ export default function AboutPage() {
         </div>
       )}
 
-      <Footer />
+      <ScrollReveal animation="fade-up" duration={720}>
+        <Footer />
+      </ScrollReveal>
     </main>
   );
 }

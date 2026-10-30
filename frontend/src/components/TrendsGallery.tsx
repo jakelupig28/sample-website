@@ -58,7 +58,7 @@ export default function TrendsGallery() {
                   </span>
                   <span className={styles.actionLabel}>
                     <span>Check Service</span>
-                    <ArrowUpRight size={13} />
+                    <ArrowUpRight size={13} strokeWidth={1.5} />
                   </span>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export default function TrendsGallery() {
         <div className={styles.viewAllRow}>
           <Link href="/lookbook" className="btn btn-terracotta">
             <span>Explore Complete Lookbook Gallery</span>
-            <ArrowUpRight size={16} />
+            <ArrowUpRight size={16} strokeWidth={1.5} />
           </Link>
         </div>
       </div>

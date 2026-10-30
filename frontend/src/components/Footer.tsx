@@ -6,6 +6,7 @@ import { MapPin, Phone, Mail, ArrowRight, Check } from "lucide-react";
 import styles from "./Footer.module.css";
 import SocialLinks from "./SocialLinks";
 import { SALON_INFO } from "../data/salonData";
+import ElanIcon from "./ElanIcon";
 
 export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
@@ -25,10 +26,10 @@ export default function Footer() {
         <div className={styles.footerGrid}>
           {/* Brand Col */}
           <div className={styles.brandCol}>
-            <div className={styles.brandLogo}>
-              <div className={styles.brandMonogram}>É</div>
+            <Link href="/" className={styles.brandLogo}>
+              <ElanIcon size={38} variant="dark" />
               <span className={styles.brandName}>{SALON_INFO.name}</span>
-            </div>
+            </Link>
             <p className={styles.brandDesc}>
               A luxury editorial hair atelier and holistic Japanese trichology sanctuary dedicated to architectural
               hair precision and clean botanicals.

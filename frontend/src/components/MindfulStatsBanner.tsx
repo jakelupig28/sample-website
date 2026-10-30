@@ -67,7 +67,7 @@ export default function MindfulStatsBanner() {
               </p>
               <Link href="/services" className="btn btn-terracotta">
                 <span>Explore Scalp Sanctuary Services</span>
-                <ArrowUpRight size={15} />
+                <ArrowUpRight size={15} strokeWidth={1.5} />
               </Link>
             </div>
           </div>

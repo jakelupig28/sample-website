@@ -32,14 +32,14 @@ export default function AtelierCalloutBanner() {
               className="btn btn-terracotta"
             >
               <span>Connect With Concierge</span>
-              <ArrowUpRight size={17} />
+              <ArrowUpRight size={16} strokeWidth={1.5} />
             </Link>
             <a
               href={`tel:${SALON_INFO.phone}`}
               className="btn btn-secondary"
-              style={{ color: "#ffffff", borderColor: "#4d463f", justifyContent: "center" }}
+              style={{ color: "#ffffff", borderColor: "#4d463f", justifyContent: "center", display: "inline-flex", alignItems: "center", gap: "0.45rem" }}
             >
-              <Phone size={15} />
+              <Phone size={15} strokeWidth={1.5} />
               <span>Direct: {SALON_INFO.phone}</span>
             </a>
           </div>

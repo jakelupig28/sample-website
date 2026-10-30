@@ -70,7 +70,7 @@ export default function AtelierServicesShowcase() {
                 <span className={styles.categoryBadge}>{service.categoryLabel}</span>
                 {service.isPopular && (
                   <span className={styles.popularBadge}>
-                    <Sparkles size={12} />
+                    <Sparkles size={12} strokeWidth={1.5} />
                     <span>House Signature</span>
                   </span>
                 )}
@@ -94,7 +94,7 @@ export default function AtelierServicesShowcase() {
                   </span>
                   <div className={styles.actionHint}>
                     <span>Check Service</span>
-                    <ArrowUpRight size={14} />
+                    <ArrowUpRight size={14} strokeWidth={1.5} />
                   </div>
                 </div>
               </div>
@@ -105,8 +105,8 @@ export default function AtelierServicesShowcase() {
         {/* View All Offerings Link */}
         <div className={styles.viewAllCta}>
           <Link href="/services" className="btn btn-terracotta">
-            <span>Explore Full Services Menu & Pricing</span>
-            <ArrowUpRight size={16} />
+            <span>Explore Full Services Menu &amp; Pricing</span>
+            <ArrowUpRight size={16} strokeWidth={1.5} />
           </Link>
         </div>
       </div>

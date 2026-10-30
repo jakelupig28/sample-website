@@ -21,8 +21,8 @@ export default function Hero() {
         {/* Left Column: Bold Typography, Magnetic Context & Action Buttons */}
         <div className={styles.heroLeftCol}>
           <div className={styles.heroEyebrowPill}>
-            <Sparkles size={12} />
-            <span>Haute Coiffure & Trichology Sanctuary</span>
+            <Sparkles size={13} strokeWidth={1.5} />
+            <span>Haute Coiffure &amp; Trichology Sanctuary</span>
           </div>
 
           <h1 className={styles.heroMainHeading}>
@@ -36,12 +36,12 @@ export default function Hero() {
           <div className={styles.heroButtons}>
             <Link href="/services" className="btn btn-terracotta">
               <span>Explore Services</span>
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={16} strokeWidth={1.5} />
             </Link>
 
             <Link href="/services" className="btn btn-secondary">
               <span>Our Shop</span>
-              <ShoppingBag size={15} />
+              <ShoppingBag size={15} strokeWidth={1.5} />
             </Link>
           </div>
         </div>

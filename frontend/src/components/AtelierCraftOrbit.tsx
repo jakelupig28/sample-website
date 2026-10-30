@@ -176,7 +176,7 @@ export default function AtelierCraftOrbit() {
         {/* Section Header */}
         <div className={styles.sectionHeader}>
           <div className={styles.eyebrowPill}>
-            <Sparkles size={13} />
+            <Sparkles size={13} strokeWidth={1.5} />
             <span>Bespoke Salon Craft In Motion</span>
           </div>
           <h2 className={styles.sectionTitle}>
@@ -301,7 +301,7 @@ export default function AtelierCraftOrbit() {
                 {currentStep.features.map((feat, i) => (
                   <div key={i} className={styles.featureItem}>
                     <div className={styles.checkIcon}>
-                      <Check size={12} strokeWidth={3} />
+                      <Check size={11} strokeWidth={2.2} />
                     </div>
                     <span>{feat}</span>
                   </div>
@@ -316,7 +316,7 @@ export default function AtelierCraftOrbit() {
                   style={{ flex: 1, justifyContent: "center" }}
                 >
                   <span>Reserve This Ritual</span>
-                  <ArrowRight size={16} />
+                  <ArrowRight size={16} strokeWidth={1.5} />
                 </button>
 
                 <button
@@ -326,14 +326,14 @@ export default function AtelierCraftOrbit() {
                   title="Next signature service in motion"
                 >
                   <span>Next Service</span>
-                  <ChevronRight size={16} />
+                  <ChevronRight size={16} strokeWidth={1.5} />
                 </button>
               </div>
 
               {/* Trust Subtext */}
               <div className={styles.trustFooter}>
-                <ShieldCheck size={14} color="var(--color-accent-terracotta)" />
-                <span>Single-chair private care • Certified Paris & Tokyo Master Artisans</span>
+                <ShieldCheck size={15} strokeWidth={1.5} color="var(--color-accent-terracotta)" />
+                <span>Single-chair private care • Certified Paris &amp; Tokyo Master Artisans</span>
               </div>
             </div>
           </div>

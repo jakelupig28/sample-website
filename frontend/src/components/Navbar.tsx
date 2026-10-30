@@ -8,6 +8,7 @@ import styles from "./Navbar.module.css";
 import { SALON_INFO } from "../data/salonData";
 import { useBooking } from "../context/BookingContext";
 import SocialLinks from "./SocialLinks";
+import ElanIcon from "./ElanIcon";
 
 interface NavbarProps {
   onOpenBooking?: () => void;
@@ -58,7 +59,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         <div className={`container ${styles.navContainer}`}>
           {/* Brand Logo */}
           <Link href="/" className={styles.brandLogo} onClick={closeMobileMenu}>
-            <div className={styles.brandMonogram}>É</div>
+            <ElanIcon size={40} variant="dark" />
             <div className={styles.brandText}>
               <span className={styles.brandName}>{SALON_INFO.name}</span>
               <span className={styles.brandSub}>ATELIER & SANCTUARY</span>
@@ -87,7 +88,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           {/* Nav Actions */}
           <div className={styles.navActions}>
             <a href={`tel:${SALON_INFO.phone}`} className={styles.phoneLink} title="Call Concierge">
-              <Phone size={15} />
+              <Phone size={15} strokeWidth={1.5} />
               <span>{SALON_INFO.phone}</span>
             </a>
 
@@ -96,9 +97,9 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               className="btn btn-terracotta btn-sm"
               id="nav-reserve-btn"
               aria-label="Book Appointment"
-              style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
             >
-              <Calendar size={13} />
+              <Calendar size={14} strokeWidth={1.5} />
               <span>Book Appointment</span>
             </button>
 
@@ -109,7 +110,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               aria-label="Toggle navigation menu"
               id="mobile-menu-toggle"
             >
-              <Menu size={26} />
+              <Menu size={24} strokeWidth={1.5} />
             </button>
           </div>
         </div>
@@ -124,15 +125,15 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       {/* Mobile Drawer */}
       <div className={`${styles.mobileDrawer} ${mobileMenuOpen ? styles.mobileDrawerOpen : ""}`}>
         <div className={styles.mobileDrawerHeader}>
-          <div className={styles.brandLogo}>
-            <div className={styles.brandMonogram}>É</div>
+          <Link href="/" className={styles.brandLogo} onClick={closeMobileMenu}>
+            <ElanIcon size={36} variant="dark" />
             <div className={styles.brandText}>
               <span className={styles.brandName}>{SALON_INFO.name}</span>
               <span className={styles.brandSub}>ATELIER & SANCTUARY</span>
             </div>
-          </div>
+          </Link>
           <button className={styles.mobileCloseBtn} onClick={closeMobileMenu} aria-label="Close menu">
-            <X size={20} />
+            <X size={20} strokeWidth={1.5} />
           </button>
         </div>
 
@@ -160,9 +161,9 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               openReservation();
             }}
             className="btn btn-terracotta"
-            style={{ width: "100%", justifyContent: "center", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
+            style={{ width: "100%", justifyContent: "center", display: "inline-flex", alignItems: "center", gap: "0.45rem" }}
           >
-            <Calendar size={15} />
+            <Calendar size={15} strokeWidth={1.5} />
             <span>Book Appointment</span>
           </button>
           <Link
@@ -176,9 +177,9 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           <a
             href={`tel:${SALON_INFO.phone}`}
             className="btn btn-secondary"
-            style={{ width: "100%", justifyContent: "center" }}
+            style={{ width: "100%", justifyContent: "center", display: "inline-flex", alignItems: "center", gap: "0.45rem" }}
           >
-            <Phone size={16} />
+            <Phone size={15} strokeWidth={1.5} />
             <span>Call {SALON_INFO.phone}</span>
           </a>
 

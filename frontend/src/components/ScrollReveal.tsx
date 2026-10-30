@@ -7,6 +7,8 @@ interface ScrollRevealProps {
   animation?: "fade-up" | "fade-in" | "slide-left" | "slide-right" | "scale-up";
   delay?: number;
   duration?: number;
+  threshold?: number;
+  rootMargin?: string;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -15,7 +17,9 @@ export default function ScrollReveal({
   children,
   animation = "fade-up",
   delay = 0,
-  duration = 420,
+  duration = 720,
+  threshold = 0.08,
+  rootMargin = "0px 0px -40px 0px",
   className = "",
   style = {},
 }: ScrollRevealProps) {
@@ -29,6 +33,16 @@ export default function ScrollReveal({
       return;
     }
 
+    const currentElem = elementRef.current;
+    if (!currentElem) return;
+
+    // Immediately show if already well within the viewport to prevent flash
+    const rect = currentElem.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -37,37 +51,32 @@ export default function ScrollReveal({
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -30px 0px",
+        threshold,
+        rootMargin,
       }
     );
 
-    const currentElem = elementRef.current;
-    if (currentElem) {
-      observer.observe(currentElem);
-    }
+    observer.observe(currentElem);
 
     return () => {
-      if (currentElem) {
-        observer.unobserve(currentElem);
-      }
+      observer.disconnect();
     };
-  }, []);
+  }, [threshold, rootMargin]);
 
   const getTransform = () => {
     if (isVisible) return "none";
     switch (animation) {
       case "fade-up":
-        return "translate3d(0, 14px, 0)";
+        return "translate3d(0, 24px, 0)";
       case "slide-left":
-        return "translate3d(-16px, 0, 0)";
+        return "translate3d(-24px, 0, 0)";
       case "slide-right":
-        return "translate3d(16px, 0, 0)";
+        return "translate3d(24px, 0, 0)";
       case "scale-up":
-        return "scale(0.98) translate3d(0, 10px, 0)";
+        return "scale(0.975) translate3d(0, 16px, 0)";
       case "fade-in":
       default:
-        return "translate3d(0, 8px, 0)";
+        return "translate3d(0, 10px, 0)";
     }
   };
 
