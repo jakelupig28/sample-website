@@ -29,11 +29,23 @@ const SKIP_TAGS = new Set(["SCRIPT", "STYLE", "TEMPLATE", "NOSCRIPT", "LINK", "M
 
 type Variant = "up" | "card" | "left" | "right";
 
-const KEYFRAMES: Record<Variant, Keyframe> = {
-  up: { opacity: 0, transform: "translate3d(0, 34px, 0)", filter: "blur(5px)" },
-  card: { opacity: 0, transform: "translate3d(0, 46px, 0) scale(0.96)" },
-  left: { opacity: 0, transform: "translate3d(-48px, 0, 0)" },
-  right: { opacity: 0, transform: "translate3d(48px, 0, 0)" },
+const KEYFRAMES: Record<Variant, Keyframe[]> = {
+  up: [
+    { opacity: 0, transform: "translate3d(0, 36px, 0)", filter: "blur(5px)" },
+    { opacity: 1, transform: "translate3d(0, 0, 0)", filter: "blur(0px)" },
+  ],
+  card: [
+    { opacity: 0, transform: "translate3d(0, 42px, 0) scale(0.96)", filter: "blur(4px)" },
+    { opacity: 1, transform: "translate3d(0, 0, 0) scale(1)", filter: "blur(0px)" },
+  ],
+  left: [
+    { opacity: 0, transform: "translate3d(-44px, 0, 0)", filter: "blur(4px)" },
+    { opacity: 1, transform: "translate3d(0, 0, 0)", filter: "blur(0px)" },
+  ],
+  right: [
+    { opacity: 0, transform: "translate3d(44px, 0, 0)", filter: "blur(4px)" },
+    { opacity: 1, transform: "translate3d(0, 0, 0)", filter: "blur(0px)" },
+  ],
 };
 
 function elementChildren(el: Element): HTMLElement[] {
@@ -100,16 +112,17 @@ export default function RevealEngine() {
         const variant = (el.dataset.reveal as Variant) || "up";
         const delay = Math.min(i, MAX_STAGGER_STEPS) * STAGGER_MS;
         el.setAttribute("data-revealed", "");
-        // Implicit end keyframe → animates to the element's natural CSS state, then releases.
-        el.animate([KEYFRAMES[variant]], {
-          duration: variant === "card" ? 950 : 850,
+        el.animate(KEYFRAMES[variant], {
+          duration: variant === "card" ? 850 : 750,
           delay,
           easing: EASE,
-          fill: "backwards",
+          fill: "both",
         });
       });
     };
 
+    // Only triggers once the container is 50px inside the visible screen,
+    // so the user actually watches it smoothly glide into view as they scroll.
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -121,7 +134,7 @@ export default function RevealEngine() {
         }
         if (pending.length && !rafId) rafId = requestAnimationFrame(flush);
       },
-      { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0 }
+      { root: null, rootMargin: "0px 0px -50px 0px", threshold: 0 }
     );
 
     const mark = (el: HTMLElement, variant: Variant, revealNow: boolean) => {
@@ -133,9 +146,9 @@ export default function RevealEngine() {
       observer.observe(el);
     };
 
-    const inViewport = (el: HTMLElement) => {
+    const inInitialViewport = (el: HTMLElement) => {
       const r = el.getBoundingClientRect();
-      return r.top < window.innerHeight && r.bottom > 0;
+      return r.top < window.innerHeight * 0.82 && r.bottom > 0;
     };
 
     // ---- Decide how to split a container into revealable units
@@ -188,7 +201,7 @@ export default function RevealEngine() {
         else if (isGrid || isCard) variant = "card";
         else if (child.querySelector("img, iframe") && child.offsetHeight > 160) variant = "card";
 
-        mark(child, variant, revealVisibleNow && inViewport(child));
+        mark(child, variant, revealVisibleNow && inInitialViewport(child));
       });
     };
 

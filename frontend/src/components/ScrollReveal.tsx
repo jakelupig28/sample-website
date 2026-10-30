@@ -33,19 +33,21 @@ export default function ScrollReveal({
       return;
     }
 
-    // 1. Initial viewport check: if already in or near view on page load, reveal gracefully
+    // 1. Initial viewport check: only elements already high up in the initial viewport on page load reveal immediately
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.95 && rect.bottom > 0) {
+    if (rect.top < window.innerHeight * 0.82 && rect.bottom > 0) {
       const timer = setTimeout(() => setIsVisible(true), Math.max(60, delay));
       return () => clearTimeout(timer);
     }
 
-    // 2. High-performance IntersectionObserver with generous bottom margin so elements glide in ahead of scroll
+    // 2. High-performance IntersectionObserver with negative bottom margin (-60px)
+    // Ensures the container is already 60px inside the visible screen before triggering,
+    // so the user actually sees the smooth upward gliding transition as they scroll down.
     let isObserved = true;
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight * 0.98) {
+          if (entry.isIntersecting) {
             setIsVisible(true);
             if (isObserved && el) {
               observer.unobserve(el);
@@ -56,7 +58,7 @@ export default function ScrollReveal({
       },
       {
         root: null,
-        rootMargin: "0px 0px 80px 0px", // Triggers 80px before entering viewport bottom
+        rootMargin: "0px 0px -60px 0px", // Only triggers once 60px inside the viewport
         threshold: 0,
       }
     );
@@ -67,7 +69,7 @@ export default function ScrollReveal({
     const onScroll = () => {
       if (!isObserved || !el) return;
       const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight * 0.98 && r.bottom > 0) {
+      if (r.top <= window.innerHeight - 60 && r.bottom > 0) {
         setIsVisible(true);
         observer.unobserve(el);
         isObserved = false;

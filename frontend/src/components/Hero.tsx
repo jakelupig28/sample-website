@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, ShoppingBag, Sparkles } from "lucide-react";
+import { ArrowUpRight, ShoppingBag } from "lucide-react";
 import { motion } from "motion/react";
 import styles from "./Hero.module.css";
 
@@ -29,16 +29,6 @@ export default function Hero() {
       <div className={styles.heroContainer}>
         {/* Left Column: Bold Typography & Action Buttons */}
         <div className={styles.heroLeftCol}>
-          <motion.div
-            className={styles.heroEyebrowPill}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: easeOut }}
-          >
-            <Sparkles size={13} strokeWidth={1.5} />
-            <span>Haute Coiffure &amp; Trichology Sanctuary</span>
-          </motion.div>
-
           <motion.h1
             className={styles.heroMainHeading}
             initial={{ opacity: 0, y: 26, filter: "blur(4px)" }}

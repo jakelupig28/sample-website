@@ -57,7 +57,13 @@ export default function AtelierServicesShowcase() {
         {/* Services Grid with Clickable Cards */}
         <div className={styles.grid}>
           {displayedServices.map((service, index) => (
-            <ScrollReveal key={service.id} delay={(index % 3) * 90} animation="fade-up">
+            <ScrollReveal
+              key={service.id}
+              delay={(index % 3) * 90}
+              animation="fade-up"
+              className={styles.gridItem}
+              style={{ height: "100%", display: "flex", flexDirection: "column" }}
+            >
               <div
                 className={styles.card}
                 onClick={() => openBooking(service)}

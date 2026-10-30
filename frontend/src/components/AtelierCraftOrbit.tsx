@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { ArrowRight, Sparkles, Clock, ShieldCheck, Check, Layers, ChevronRight } from "lucide-react";
+import { ArrowRight, Clock, ShieldCheck, Check, Layers, ChevronRight } from "lucide-react";
 import styles from "./AtelierCraftOrbit.module.css";
 import { useBooking } from "../context/BookingContext";
 import { SERVICES_DATA, ServiceItem } from "../data/salonData";
@@ -177,10 +177,6 @@ export default function AtelierCraftOrbit() {
         {/* Section Header */}
         <ScrollReveal animation="fade-up">
           <div className={styles.sectionHeader}>
-            <div className={styles.eyebrowPill}>
-              <Sparkles size={13} strokeWidth={1.5} />
-              <span>Bespoke Salon Craft In Motion</span>
-            </div>
             <h2 className={styles.sectionTitle}>
               Atelier Signature Services In Motion
             </h2>

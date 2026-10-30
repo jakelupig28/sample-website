@@ -76,6 +76,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 2.25rem;
+  align-items: stretch;
+}
+
+.gridItem {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
 }
 
 .card {
@@ -86,6 +93,8 @@
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
+  height: 100%;
+  flex: 1;
   transition: all var(--transition-smooth);
   cursor: pointer;
   position: relative;
@@ -205,6 +214,7 @@
 }
 
 .cardFooter {
+  margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid var(--color-border);
   display: flex;

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Check, ArrowUpRight, Leaf } from "lucide-react";
+import { Check, ArrowUpRight } from "lucide-react";
 import styles from "./SalonPartnerFeature.module.css";
 import ScrollReveal from "./ScrollReveal";
 
@@ -85,21 +85,6 @@ export default function SalonPartnerFeature() {
                     e.currentTarget.style.display = "none";
                   }}
                 />
-              </div>
-
-              {/* Overlapping organic badge */}
-              <div className={styles.organicBadge}>
-                <div className={styles.badgeIcon}>
-                  <Leaf size={20} strokeWidth={1.5} />
-                </div>
-                <div>
-                  <div className={styles.badgeTitle}>
-                    100% Zero-Ammonia
-                  </div>
-                  <div className={styles.badgeSub}>
-                    Clean Organic Formulations
-                  </div>
-                </div>
               </div>
             </div>
           </ScrollReveal>
