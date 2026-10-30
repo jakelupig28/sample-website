@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { MapPin, Phone, Mail, ArrowRight, Check } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowRight, Check, ArrowUp } from "lucide-react";
 import styles from "./Footer.module.css";
 import SocialLinks from "./SocialLinks";
 import { SALON_INFO } from "../data/salonData";
@@ -17,6 +17,15 @@ export default function Footer() {
     if (email) {
       setSubscribed(true);
       setEmail("");
+    }
+  };
+
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -108,14 +117,31 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
-          <div>
-            © {new Date().getFullYear()} {SALON_INFO.fullName}. All rights reserved.
+          <div className={styles.copyrightBlock}>
+            <p className={styles.copyrightText}>
+              © {new Date().getFullYear()} {SALON_INFO.fullName}. All rights reserved.
+            </p>
+            <p className={styles.creatorCredit}>
+              Created by: <span className={styles.creatorName}>Jake Lupig</span>
+            </p>
           </div>
+
           <div className={styles.bottomLegalLinks}>
             <span>Privacy Policy</span>
             <span>Terms of Service</span>
             <span>Sanitation Standards</span>
           </div>
+
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className={styles.backToTopBtn}
+            aria-label="Back to top of page"
+            title="Back to top"
+          >
+            <span>Back to top</span>
+            <ArrowUp size={14} strokeWidth={2} />
+          </button>
         </div>
       </div>
     </footer>

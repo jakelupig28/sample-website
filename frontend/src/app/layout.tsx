@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { BookingProvider } from "../context/BookingContext";
+import SmoothScroll from "../components/SmoothScroll";
+import RevealEngine from "../components/RevealEngine";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -39,7 +41,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <BookingProvider>{children}</BookingProvider>
+        <SmoothScroll>
+          <BookingProvider>{children}</BookingProvider>
+          <RevealEngine />
+        </SmoothScroll>
       </body>
     </html>
   );

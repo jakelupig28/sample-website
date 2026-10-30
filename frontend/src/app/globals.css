@@ -13,15 +13,16 @@
   --color-text-light: #8e8982;
   --color-text-inverse: #fbf9f5;
   
-  --color-accent-gold: #8c6d37;
-  --color-accent-gold-hover: #735728;
-  --color-accent-gold-light: #d6be96;
-  --color-accent-gold-subtle: rgba(140, 109, 55, 0.08);
+  /* French Champagne Gold & Antique Bronze Palette (Zero Orange) */
+  --color-accent-gold: #9e7938;
+  --color-accent-gold-hover: #826025;
+  --color-accent-gold-light: #f5ede0;
+  --color-accent-gold-subtle: rgba(158, 121, 56, 0.08);
 
-  --color-accent-terracotta: #cb6d3e;
-  --color-accent-terracotta-hover: #b55a2d;
-  --color-accent-terracotta-light: #fbeee7;
-  --color-accent-terracotta-subtle: rgba(203, 109, 62, 0.1);
+  --color-accent-terracotta: #a67f3b; /* Pure French Antique Bronze Gold */
+  --color-accent-terracotta-hover: #8a6629;
+  --color-accent-terracotta-light: #f6efe2;
+  --color-accent-terracotta-subtle: rgba(166, 127, 59, 0.08);
   
   --color-border: #e8e3d8;
   --color-border-dark: #262624;
@@ -48,12 +49,23 @@
 }
 
 ::selection {
-  background: var(--color-accent-terracotta);
+  background: var(--color-accent-gold);
   color: #ffffff;
 }
 
+/* RevealEngine: containers waiting to scroll into view stay hidden until revealed */
+[data-reveal]:not([data-revealed]) {
+  opacity: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal]:not([data-revealed]) {
+    opacity: 1 !important;
+  }
+}
+
 input, textarea {
-  caret-color: var(--color-accent-terracotta);
+  caret-color: var(--color-accent-gold);
 }
 
 * {
@@ -63,7 +75,8 @@ input, textarea {
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Lenis handles smooth scrolling via requestAnimationFrame; avoid browser CSS fighting */
+  scroll-behavior: auto;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -110,14 +123,14 @@ img {
 }
 
 .section-padding {
-  padding: 6.5rem 0;
+  padding: 3.5rem 0;
 }
 
 /* Section Header Styles */
 .section-header {
   text-align: center;
   max-width: 680px;
-  margin: 0 auto 3.5rem auto;
+  margin: 0 auto 2.25rem auto;
 }
 
 .section-title {
@@ -126,12 +139,12 @@ img {
   line-height: 1.18;
   letter-spacing: -0.02em;
   color: var(--color-text-main);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 4.5rem 0;
+    padding: 2.75rem 0;
   }
   .section-title {
     font-size: 2.15rem;
@@ -146,7 +159,7 @@ img {
     padding: 0 1.15rem;
   }
   .section-padding {
-    padding: 3.5rem 0;
+    padding: 2.25rem 0;
   }
   .section-title {
     font-size: 1.85rem;
@@ -198,14 +211,14 @@ img {
   background: var(--color-accent-terracotta);
   color: #ffffff;
   border: 1px solid var(--color-accent-terracotta);
-  box-shadow: 0 4px 14px rgba(203, 109, 62, 0.28);
+  box-shadow: 0 4px 14px rgba(166, 127, 59, 0.28);
 }
 
 .btn-terracotta:hover {
   background: var(--color-accent-terracotta-hover);
   border-color: var(--color-accent-terracotta-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(203, 109, 62, 0.36);
+  box-shadow: 0 6px 20px rgba(166, 127, 59, 0.36);
 }
 
 .btn-gold {
@@ -455,10 +468,10 @@ img {
 
 @keyframes softPulseGlow {
   0%, 100% {
-    box-shadow: 0 4px 14px rgba(203, 109, 62, 0.25);
+    box-shadow: 0 4px 14px rgba(166, 127, 59, 0.22);
   }
   50% {
-    box-shadow: 0 6px 22px rgba(203, 109, 62, 0.45);
+    box-shadow: 0 6px 22px rgba(166, 127, 59, 0.4);
   }
 }
 
@@ -510,7 +523,7 @@ img {
 .trend-card:hover {
   transform: translateY(-4px) !important;
   box-shadow: 0 16px 36px rgba(25, 24, 23, 0.09) !important;
-  border-color: rgba(203, 109, 62, 0.35) !important;
+  border-color: rgba(166, 127, 59, 0.35) !important;
 }
 
 .trend-card img {

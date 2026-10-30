@@ -127,11 +127,11 @@ export default function SocialLinks({
             boxShadow: "0 2px 8px rgba(25, 24, 23, 0.05)",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "var(--color-accent-terracotta, #cb6d3e)";
-            e.currentTarget.style.background = "var(--color-accent-terracotta, #cb6d3e)";
+            e.currentTarget.style.borderColor = "var(--color-accent-gold, #9e7938)";
+            e.currentTarget.style.background = "var(--color-accent-gold, #9e7938)";
             e.currentTarget.style.color = "#ffffff";
             e.currentTarget.style.transform = "translateY(-2px)";
-            e.currentTarget.style.boxShadow = "0 6px 16px rgba(203, 109, 62, 0.28)";
+            e.currentTarget.style.boxShadow = "0 6px 16px rgba(158, 121, 56, 0.28)";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.borderColor = "rgba(140, 109, 55, 0.22)";

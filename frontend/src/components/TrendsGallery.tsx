@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { LOOKBOOK_GALLERY } from "../data/salonData";
 import styles from "./TrendsGallery.module.css";
+import ScrollReveal from "./ScrollReveal";
 
 export default function TrendsGallery() {
   const trendingItems = LOOKBOOK_GALLERY.slice(0, 4);
@@ -12,57 +13,60 @@ export default function TrendsGallery() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <div className={styles.header}>
-          <span className={styles.tag}>
-            Runway Trends & Daylight Portfolios
-          </span>
-          <h2 className={styles.title}>
-            Discover The Latest Hair Care Trends & Styling
-          </h2>
-          <p className={styles.subtitle}>
-            Captured in true North-facing daylight in our Greenwich Village atelier. Explore our signature French balayage, precision bobs, and head spa revitalizations.
-          </p>
-        </div>
+        <ScrollReveal animation="fade-up">
+          <div className={styles.header}>
+            <span className={styles.tag}>
+              Runway Trends &amp; Daylight Portfolios
+            </span>
+            <h2 className={styles.title}>
+              Discover The Latest Hair Care Trends &amp; Styling
+            </h2>
+            <p className={styles.subtitle}>
+              Captured in true North-facing daylight in our Greenwich Village atelier. Explore our signature French balayage, precision bobs, and head spa revitalizations.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* 4-Tile Grid */}
         <div className={styles.grid}>
-          {trendingItems.map((item) => (
-            <Link
-              key={item.id}
-              href="/lookbook"
-              className={`${styles.card} trend-card`}
-            >
-              <div className={styles.cardImageWrapper}>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className={styles.cardImage}
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
-                />
-              </div>
-              <div className={styles.cardBody}>
-                <span className={styles.techniqueTag}>
-                  {item.technique}
-                </span>
-                <h3 className={styles.cardTitle}>
-                  {item.title}
-                </h3>
-                <p className={styles.cardDesc}>
-                  {item.description}
-                </p>
-                <div className={styles.cardFooter}>
-                  <span className={styles.locationLabel}>
-                    Greenwich Village Atelier
-                  </span>
-                  <span className={styles.actionLabel}>
-                    <span>Check Service</span>
-                    <ArrowUpRight size={13} strokeWidth={1.5} />
-                  </span>
+          {trendingItems.map((item, index) => (
+            <ScrollReveal key={item.id} delay={(index % 4) * 80} animation="fade-up">
+              <Link
+                href="/lookbook"
+                className={`${styles.card} trend-card`}
+              >
+                <div className={styles.cardImageWrapper}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className={styles.cardImage}
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
                 </div>
-              </div>
-            </Link>
+                <div className={styles.cardBody}>
+                  <span className={styles.techniqueTag}>
+                    {item.technique}
+                  </span>
+                  <h3 className={styles.cardTitle}>
+                    {item.title}
+                  </h3>
+                  <p className={styles.cardDesc}>
+                    {item.description}
+                  </p>
+                  <div className={styles.cardFooter}>
+                    <span className={styles.locationLabel}>
+                      Greenwich Village Atelier
+                    </span>
+                    <span className={styles.actionLabel}>
+                      <span>Check Service</span>
+                      <ArrowUpRight size={13} strokeWidth={1.5} />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
 

@@ -11,7 +11,6 @@ export default function ElanIcon({
   className = "",
   variant = "dark",
 }: ElanIconProps) {
-  const isDark = variant === "dark";
   const isLight = variant === "light";
 
   return (
@@ -29,26 +28,22 @@ export default function ElanIcon({
         <linearGradient id={`elanBg_${variant}`} x1="0%" y1="0%" x2="100%" y2="100%">
           {isLight ? (
             <>
-              <stop offset="0%" stop-color="#ffffff" />
-              <stop offset="100%" stop-color="#f6f2ec" />
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#f5efe6" />
             </>
           ) : (
             <>
-              <stop offset="0%" stop-color="#1e1c1b" />
-              <stop offset="50%" stop-color="#141312" />
-              <stop offset="100%" stop-color="#0a0a09" />
+              <stop offset="0%" stopColor="#1e1c1b" />
+              <stop offset="50%" stopColor="#121110" />
+              <stop offset="100%" stopColor="#0a0a09" />
             </>
           )}
         </linearGradient>
         <linearGradient id={`elanGold_${variant}`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#faedd8" />
-          <stop offset="30%" stop-color="#dfbd7c" />
-          <stop offset="70%" stop-color="#b69049" />
-          <stop offset="100%" stop-color="#8a6927" />
-        </linearGradient>
-        <linearGradient id={`elanTerracotta_${variant}`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#f59c70" />
-          <stop offset="100%" stop-color="#c45d2e" />
+          <stop offset="0%" stopColor="#faeed9" />
+          <stop offset="25%" stopColor="#dfbd7c" />
+          <stop offset="65%" stopColor="#b69049" />
+          <stop offset="100%" stopColor="#8a6927" />
         </linearGradient>
       </defs>
 
@@ -61,10 +56,10 @@ export default function ElanIcon({
         rx="116"
         fill={`url(#elanBg_${variant})`}
         stroke={`url(#elanGold_${variant})`}
-        strokeWidth="5"
+        strokeWidth="4.5"
       />
 
-      {/* Inner Filigree hairline */}
+      {/* Inner Filigree Hairline */}
       <rect
         x="38"
         y="38"
@@ -74,66 +69,38 @@ export default function ElanIcon({
         fill="none"
         stroke={`url(#elanGold_${variant})`}
         strokeWidth="1.5"
-        strokeOpacity={isLight ? "0.6" : "0.4"}
+        strokeOpacity={isLight ? "0.55" : "0.38"}
       />
 
       {/* Halo Astrolabe Ring */}
       <circle
         cx="256"
         cy="256"
-        r="188"
+        r="190"
         fill="none"
         stroke={`url(#elanGold_${variant})`}
         strokeWidth="1.2"
         strokeDasharray="4 8"
-        strokeOpacity={isLight ? "0.4" : "0.32"}
+        strokeOpacity={isLight ? "0.38" : "0.28"}
       />
 
-      {/* Dynamic Shears Arc */}
+      {/* Perfectly Unified Continuous Classical Serif É */}
       <path
-        d="M 180 370 C 150 280 200 170 330 130"
-        fill="none"
-        stroke={`url(#elanTerracotta_${variant})`}
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeOpacity="0.75"
-      />
-
-      {/* Top Accent Acute Slash */}
-      <path
-        d="M 268 126 L 312 82 C 316 78 322 78 326 82 C 330 86 330 92 326 96 L 284 136 C 280 140 273 139 269 135 C 265 131 265 129 268 126 Z"
+        d="M 180 166 H 334 V 208 H 322 C 320 196 312 186 294 186 H 254 V 252 H 304 C 316 252 320 248 322 240 H 330 V 284 H 322 C 320 276 316 272 304 272 H 254 V 338 H 302 C 324 338 332 328 334 316 H 344 V 358 H 180 V 338 C 196 338 204 336 216 326 V 198 C 204 188 196 186 180 186 Z"
         fill={`url(#elanGold_${variant})`}
       />
 
-      {/* Vertical Stem */}
-      <rect x="204" y="162" width="42" height="198" fill={`url(#elanGold_${variant})`} />
-      <polygon points="172,162 210,162 210,172 188,172 172,184" fill={`url(#elanGold_${variant})`} />
-      <polygon points="168,360 214,360 214,350 188,350 168,338" fill={`url(#elanGold_${variant})`} />
-
-      {/* Top Horizontal Arm */}
+      {/* Classical French Acute Accent */}
       <path
-        d="M 204 162 L 332 162 C 344 162 352 170 354 182 L 354 206 L 342 206 C 340 192 334 176 318 176 L 246 176 L 246 162 Z"
+        d="M 264 136 C 262 130 264 124 270 118 L 308 82 C 314 76 322 78 326 84 C 330 90 328 98 320 104 L 282 140 C 276 144 268 142 264 136 Z"
         fill={`url(#elanGold_${variant})`}
       />
 
-      {/* Center Horizontal Arm */}
-      <path
-        d="M 246 248 L 314 248 C 324 248 328 252 330 262 L 340 262 L 340 240 L 330 240 C 328 245 324 248 314 248 L 246 248 Z"
-        fill={`url(#elanGold_${variant})`}
-      />
-
-      {/* Bottom Horizontal Arm */}
-      <path
-        d="M 204 360 L 340 360 C 356 360 364 350 368 334 L 378 334 L 376 376 L 204 376 Z"
-        fill={`url(#elanGold_${variant})`}
-      />
-
-      {/* Jewel Accents */}
-      <circle cx="340" cy="308" r="4.5" fill={`url(#elanTerracotta_${variant})`} />
-      <circle cx="170" cy="208" r="3.5" fill={`url(#elanGold_${variant})`} opacity="0.8" />
-      <circle cx="256" cy="62" r="3" fill={`url(#elanGold_${variant})`} opacity="0.6" />
-      <circle cx="256" cy="450" r="3" fill={`url(#elanGold_${variant})`} opacity="0.6" />
+      {/* Subtle Diamond Accents */}
+      <circle cx="256" cy="62" r="3.5" fill={`url(#elanGold_${variant})`} opacity="0.6" />
+      <circle cx="256" cy="450" r="3.5" fill={`url(#elanGold_${variant})`} opacity="0.6" />
+      <circle cx="62" cy="256" r="3.5" fill={`url(#elanGold_${variant})`} opacity="0.6" />
+      <circle cx="450" cy="256" r="3.5" fill={`url(#elanGold_${variant})`} opacity="0.6" />
     </svg>
   );
 }
-

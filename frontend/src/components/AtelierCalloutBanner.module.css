@@ -1,23 +1,23 @@
 .section {
-  padding: 5rem 0;
+  padding: 3.25rem 0;
   background: var(--color-bg-primary);
 }
 
 .bannerCard {
-  background: linear-gradient(135deg, #2b2622 0%, #1a1715 100%);
+  background: linear-gradient(135deg, #242220 0%, #151413 100%);
   border-radius: 20px;
-  padding: 4.5rem 2.5rem;
+  padding: 3.5rem 2.5rem;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 2rem;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  gap: 1.75rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
   position: relative;
   overflow: hidden;
-  border: 1px solid #38332e;
+  border: 1px solid rgba(166, 127, 59, 0.22);
 }
 
 .glowOrb {
@@ -28,7 +28,7 @@
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: rgba(203, 109, 62, 0.18);
+  background: rgba(166, 127, 59, 0.16);
   filter: blur(80px);
   pointer-events: none;
 }

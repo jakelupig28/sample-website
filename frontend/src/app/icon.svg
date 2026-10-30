@@ -1,63 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
     <linearGradient id="elanBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1c1a18" />
+      <stop offset="0%" stop-color="#1c1b1a" />
       <stop offset="50%" stop-color="#121110" />
       <stop offset="100%" stop-color="#0a0a09" />
     </linearGradient>
     <linearGradient id="elanGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#faedd8" />
-      <stop offset="30%" stop-color="#dfbd7c" />
-      <stop offset="70%" stop-color="#b69049" />
+      <stop offset="0%" stop-color="#faeed9" />
+      <stop offset="25%" stop-color="#dfbd7c" />
+      <stop offset="65%" stop-color="#b69049" />
       <stop offset="100%" stop-color="#8a6927" />
     </linearGradient>
-    <linearGradient id="elanTerracotta" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59c70" />
-      <stop offset="100%" stop-color="#c45d2e" />
-    </linearGradient>
-    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
 
   <!-- Luxury Obsidian Squircle Base -->
-  <rect x="20" y="20" width="472" height="472" rx="112" fill="url(#elanBg)" stroke="url(#elanGold)" stroke-width="4.5" />
+  <rect x="20" y="20" width="472" height="472" rx="116" fill="url(#elanBg)" stroke="url(#elanGold)" stroke-width="4.5" />
 
   <!-- Concentric Hairline Filigree Frame -->
-  <rect x="38" y="38" width="436" height="436" rx="94" fill="none" stroke="url(#elanGold)" stroke-width="1.5" stroke-opacity="0.4" />
+  <rect x="38" y="38" width="436" height="436" rx="98" fill="none" stroke="url(#elanGold)" stroke-width="1.5" stroke-opacity="0.38" />
   
   <!-- Subtle Compass Astrolabe Ring -->
-  <circle cx="256" cy="256" r="190" fill="none" stroke="url(#elanGold)" stroke-width="1.2" stroke-dasharray="4 8" stroke-opacity="0.32" />
+  <circle cx="256" cy="256" r="190" fill="none" stroke="url(#elanGold)" stroke-width="1.2" stroke-dasharray="4 8" stroke-opacity="0.28" />
 
-  <!-- Botanical / Shears Arc Flourish -->
-  <path d="M 180 370 C 150 280 200 170 330 130" fill="none" stroke="url(#elanTerracotta)" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.65" />
+  <!-- Single Continuous Perfectly Formed Classical Serif É -->
+  <path d="M 180 166 H 334 V 208 H 322 C 320 196 312 186 294 186 H 254 V 252 H 304 C 316 252 320 248 322 240 H 330 V 284 H 322 C 320 276 316 272 304 272 H 254 V 338 H 302 C 324 338 332 328 334 316 H 344 V 358 H 180 V 338 C 196 338 204 336 216 326 V 198 C 204 188 196 186 180 186 Z" fill="url(#elanGold)" />
 
-  <!-- ÉLAN Editorial Serif Monogram "É" -->
-  <!-- Top Accent Slash -->
-  <path d="M 268 126 L 312 82 C 316 78 322 78 326 82 C 330 86 330 92 326 96 L 284 136 C 280 140 273 139 269 135 C 265 131 265 129 268 126 Z" fill="url(#elanGold)" filter="url(#subtleGlow)" />
+  <!-- Classical French Acute Accent -->
+  <path d="M 264 136 C 262 130 264 124 270 118 L 308 82 C 314 76 322 78 326 84 C 330 90 328 98 320 104 L 282 140 C 276 144 268 142 264 136 Z" fill="url(#elanGold)" />
 
-  <!-- Main Vertical Stem with Serifs -->
-  <!-- Stem -->
-  <rect x="204" y="162" width="42" height="198" fill="url(#elanGold)" />
-  <!-- Top Left Base Serif -->
-  <polygon points="172,162 210,162 210,172 188,172 172,184" fill="url(#elanGold)" />
-  <!-- Bottom Left Base Serif -->
-  <polygon points="168,360 214,360 214,350 188,350 168,338" fill="url(#elanGold)" />
-
-  <!-- Top Horizontal Arm & Drop Finial -->
-  <path d="M 204 162 L 332 162 C 344 162 352 170 354 182 L 354 206 L 342 206 C 340 192 334 176 318 176 L 246 176 L 246 162 Z" fill="url(#elanGold)" />
-
-  <!-- Center Horizontal Arm with Editorial Chisel -->
-  <path d="M 246 248 L 314 248 C 324 248 328 252 330 262 L 340 262 L 340 240 L 330 240 C 328 245 324 248 314 248 L 246 248 Z" fill="url(#elanGold)" />
-
-  <!-- Bottom Horizontal Arm & Upward Flourish -->
-  <path d="M 204 360 L 340 360 C 356 360 364 350 368 334 L 378 334 L 376 376 L 204 376 Z" fill="url(#elanGold)" />
-
-  <!-- Stylist Artisan Shears Jewel Accent -->
-  <circle cx="340" cy="308" r="4.5" fill="url(#elanTerracotta)" />
-  <circle cx="170" cy="208" r="3.5" fill="url(#elanGold)" opacity="0.8" />
-  <circle cx="256" cy="62" r="3" fill="url(#elanGold)" opacity="0.6" />
-  <circle cx="256" cy="450" r="3" fill="url(#elanGold)" opacity="0.6" />
+  <!-- Subtle Diamond & Jewel Accents -->
+  <circle cx="256" cy="62" r="3.5" fill="url(#elanGold)" opacity="0.6" />
+  <circle cx="256" cy="450" r="3.5" fill="url(#elanGold)" opacity="0.6" />
+  <circle cx="62" cy="256" r="3.5" fill="url(#elanGold)" opacity="0.6" />
+  <circle cx="450" cy="256" r="3.5" fill="url(#elanGold)" opacity="0.6" />
 </svg>
-

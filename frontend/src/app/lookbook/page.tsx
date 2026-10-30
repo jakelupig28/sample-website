@@ -6,7 +6,6 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { Sparkles, ArrowUpRight, X, Calendar, Check, Clock, Phone } from "lucide-react";
 import styles from "../../components/LookbookSection.module.css";
-import ScrollReveal from "../../components/ScrollReveal";
 import { LOOKBOOK_GALLERY, LookbookItem, SALON_INFO } from "../../data/salonData";
 
 export default function LookbookPage() {
@@ -47,59 +46,57 @@ export default function LookbookPage() {
       </section>
 
       {/* Gallery Section */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <section className="section-padding">
-          <div className="container">
-            {/* Filter Bar */}
-            <div className={styles.galleryFilter}>
-              {filters.map((filter) => (
-                <button
-                  key={filter.id}
-                  onClick={() => setActiveFilter(filter.id)}
-                  className={`${styles.filterBtn} ${activeFilter === filter.id ? styles.filterBtnActive : ""}`}
-                >
-                  {filter.label}
-                </button>
-              ))}
-            </div>
+      <section className="section-padding">
+        <div className="container">
+          {/* Filter Bar */}
+          <div className={styles.galleryFilter}>
+            {filters.map((filter) => (
+              <button
+                key={filter.id}
+                onClick={() => setActiveFilter(filter.id)}
+                className={`${styles.filterBtn} ${activeFilter === filter.id ? styles.filterBtnActive : ""}`}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
 
-            {/* Gallery Grid */}
-            <div className={styles.galleryGrid}>
-              {filteredLooks.map((item) => (
-                <div
-                  key={item.id}
-                  className={`${styles.galleryCard} animate-fade-in-scale`}
-                  onClick={() => setSelectedLook(item)}
-                  title="Click to view look details and formula"
-                >
-                  <div className={styles.galleryImageWrapper}>
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className={styles.galleryImage}
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
-                  </div>
-                  <div className={styles.galleryBody}>
-                    <span className={styles.galleryTag}>{item.technique}</span>
-                    <h3 className={styles.galleryTitle}>{item.title}</h3>
-                    <p className={styles.galleryTechnique}>{item.description}</p>
-                    <div className={styles.galleryMeta}>
-                      <span className={styles.galleryStylist}>Atelier Portfolio</span>
-                      <span className={styles.galleryAction}>
-                        <span>Check Service</span>
-                        <ArrowUpRight size={14} />
-                      </span>
-                    </div>
+          {/* Gallery Grid */}
+          <div className={styles.galleryGrid}>
+            {filteredLooks.map((item) => (
+              <div
+                key={item.id}
+                className={`${styles.galleryCard} animate-fade-in-scale`}
+                onClick={() => setSelectedLook(item)}
+                title="Click to view look details and formula"
+              >
+                <div className={styles.galleryImageWrapper}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className={styles.galleryImage}
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                </div>
+                <div className={styles.galleryBody}>
+                  <span className={styles.galleryTag}>{item.technique}</span>
+                  <h3 className={styles.galleryTitle}>{item.title}</h3>
+                  <p className={styles.galleryTechnique}>{item.description}</p>
+                  <div className={styles.galleryMeta}>
+                    <span className={styles.galleryStylist}>Atelier Portfolio</span>
+                    <span className={styles.galleryAction}>
+                      <span>Check Service</span>
+                      <ArrowUpRight size={14} />
+                    </span>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
+      </section>
 
       {/* Interactive Look Detail Modal (Fully Responsive on Tablet & Mobile) */}
       {selectedLook && (
@@ -210,9 +207,7 @@ export default function LookbookPage() {
         </div>
       )}
 
-      <ScrollReveal animation="fade-up" duration={720}>
-        <Footer />
-      </ScrollReveal>
+      <Footer />
     </main>
   );
 }

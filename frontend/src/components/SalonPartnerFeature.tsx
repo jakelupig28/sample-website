@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Check, ArrowUpRight, Leaf } from "lucide-react";
 import styles from "./SalonPartnerFeature.module.css";
+import ScrollReveal from "./ScrollReveal";
 
 export default function SalonPartnerFeature() {
   const points = [
@@ -30,72 +31,78 @@ export default function SalonPartnerFeature() {
       <div className="container">
         <div className={styles.grid}>
           {/* Left Column: Narrative & Key Commitments */}
-          <div>
-            <span className={styles.tag}>
-              The Atelier Difference
-            </span>
+          <ScrollReveal animation="slide-right">
+            <div>
+              <span className={styles.tag}>
+                The Atelier Difference
+              </span>
 
-            <h2 className={styles.title}>
-              Your Trusted Hair Atelier & Scalp Sanctuary
-            </h2>
+              <h2 className={styles.title}>
+                Your Trusted Hair Atelier & Scalp Sanctuary
+              </h2>
 
-            <div className={styles.pointsList}>
-              {points.map((pt, i) => (
-                <div key={i} className={styles.pointItem}>
-                  <div className={styles.pointIcon}>
-                    <Check size={13} strokeWidth={2.2} />
-                  </div>
-                  <div>
-                    <h4 className={styles.pointTitle}>
-                      {pt.title}
-                    </h4>
-                    <p className={styles.pointDesc}>
-                      {pt.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+              <div className={styles.pointsList}>
+                {points.map((pt, i) => (
+                  <ScrollReveal key={i} delay={i * 60} animation="fade-up">
+                    <div className={styles.pointItem}>
+                      <div className={styles.pointIcon}>
+                        <Check size={13} strokeWidth={2.2} />
+                      </div>
+                      <div>
+                        <h4 className={styles.pointTitle}>
+                          {pt.title}
+                        </h4>
+                        <p className={styles.pointDesc}>
+                          {pt.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+
+              <div className={styles.actionsRow}>
+                <Link href="/about" className="btn btn-terracotta">
+                  <span>Discover Our Story &amp; Stylists</span>
+                  <ArrowUpRight size={15} strokeWidth={1.5} />
+                </Link>
+                <Link href="/services" className="btn btn-secondary">
+                  <span>View All Services</span>
+                </Link>
+              </div>
             </div>
-
-            <div className={styles.actionsRow}>
-              <Link href="/about" className="btn btn-terracotta">
-                <span>Discover Our Story &amp; Stylists</span>
-                <ArrowUpRight size={15} strokeWidth={1.5} />
-              </Link>
-              <Link href="/services" className="btn btn-secondary">
-                <span>View All Services</span>
-              </Link>
-            </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Visual Photo Composition */}
-          <div className={styles.imageCol}>
-            <div className={styles.imageCard}>
-              <img
-                src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80"
-                alt="ÉLAN Greenwich Village Atelier Interior"
-                className={styles.image}
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-              />
-            </div>
+          <ScrollReveal animation="slide-left" delay={120}>
+            <div className={styles.imageCol}>
+              <div className={styles.imageCard}>
+                <img
+                  src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80"
+                  alt="ÉLAN Greenwich Village Atelier Interior"
+                  className={styles.image}
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+              </div>
 
-            {/* Overlapping organic badge */}
-            <div className={styles.organicBadge}>
-              <div className={styles.badgeIcon}>
-                <Leaf size={20} strokeWidth={1.5} />
-              </div>
-              <div>
-                <div className={styles.badgeTitle}>
-                  100% Zero-Ammonia
+              {/* Overlapping organic badge */}
+              <div className={styles.organicBadge}>
+                <div className={styles.badgeIcon}>
+                  <Leaf size={20} strokeWidth={1.5} />
                 </div>
-                <div className={styles.badgeSub}>
-                  Clean Organic Formulations
+                <div>
+                  <div className={styles.badgeTitle}>
+                    100% Zero-Ammonia
+                  </div>
+                  <div className={styles.badgeSub}>
+                    Clean Organic Formulations
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -134,8 +134,8 @@
 }
 
 .priceTag {
-  background: rgba(203, 109, 62, 0.12);
-  color: var(--color-accent-terracotta);
+  background: rgba(166, 127, 59, 0.12);
+  color: var(--color-accent-gold);
   padding: 0.25rem 0.75rem;
   border-radius: 8px;
   font-weight: 700;
@@ -187,11 +187,11 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: rgba(203, 109, 62, 0.15);
+  background: rgba(166, 127, 59, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent-terracotta);
+  color: var(--color-accent-gold);
   flex-shrink: 0;
 }
 

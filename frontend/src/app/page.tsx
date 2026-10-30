@@ -13,7 +13,6 @@ import ReviewsSection from "../components/ReviewsSection";
 import AtelierCalloutBanner from "../components/AtelierCalloutBanner";
 import SalonLocationSection from "../components/SalonLocationSection";
 import Footer from "../components/Footer";
-import ScrollReveal from "../components/ScrollReveal";
 
 export default function Home() {
   return (
@@ -21,60 +20,38 @@ export default function Home() {
       {/* Navigation Header */}
       <Navbar />
 
-      {/* Hero Section inspired by Image 5 */}
-      <ScrollReveal animation="fade-in" duration={900}>
-        <Hero />
-      </ScrollReveal>
+      {/* Hero Section */}
+      <Hero />
 
       {/* Press & Editorial Accolades Ribbon */}
-      <ScrollReveal animation="fade-up" delay={100} duration={800}>
-        <AccreditationBar />
-      </ScrollReveal>
+      <AccreditationBar />
 
-      {/* Interactive Salon Services Showcase (Replaces Quiz, fully focused on services) */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <AtelierServicesShowcase />
-      </ScrollReveal>
+      {/* Interactive Salon Services Showcase */}
+      <AtelierServicesShowcase />
 
-      {/* "Your Trusted Hair Atelier & Scalp Care Partner" Feature (inspired by Image 5) */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <SalonPartnerFeature />
-      </ScrollReveal>
+      {/* "Your Trusted Hair Atelier & Scalp Care Partner" Feature */}
+      <SalonPartnerFeature />
 
-      {/* Interactive Tool Orbit (Comb & Hairdryer Horizontal Circular Rotation with Anime.js) */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <AtelierCraftOrbit />
-      </ScrollReveal>
+      {/* Interactive Signature Services in Motion */}
+      <AtelierCraftOrbit />
 
-      {/* "Hair & Scalp Wellness Good For You And The Planet" Stats & Ambient Card (inspired by Image 5) */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <MindfulStatsBanner />
-      </ScrollReveal>
+      {/* "Hair & Scalp Wellness Good For You And The Planet" Stats */}
+      <MindfulStatsBanner />
 
-      {/* "Discover The Latest Hair Care Trends & Styling" 4-Tile Lookbook Grid (inspired by Image 5) */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <TrendsGallery />
-      </ScrollReveal>
+      {/* "Discover The Latest Hair Care Trends & Styling" Lookbook Grid */}
+      <TrendsGallery />
 
       {/* Verified Client Reflections */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <ReviewsSection />
-      </ScrollReveal>
+      <ReviewsSection />
 
-      {/* "Experience The ÉLAN Standard" Action Banner (inspired by Image 5 CTA) */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <AtelierCalloutBanner />
-      </ScrollReveal>
+      {/* "Experience The ÉLAN Standard" Action Banner */}
+      <AtelierCalloutBanner />
 
       {/* Atelier Location, Interactive Google Maps & Social Media Links */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <SalonLocationSection />
-      </ScrollReveal>
+      <SalonLocationSection />
 
       {/* Modern Minimalist Footer */}
-      <ScrollReveal animation="fade-up" duration={750}>
-        <Footer />
-      </ScrollReveal>
+      <Footer />
     </main>
   );
 }

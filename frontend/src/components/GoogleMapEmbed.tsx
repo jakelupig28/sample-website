@@ -95,7 +95,7 @@ export default function GoogleMapEmbed({
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <MapPin size={18} strokeWidth={1.5} color="var(--color-accent-terracotta, #cb6d3e)" />
+          <MapPin size={18} strokeWidth={1.5} color="var(--color-accent-gold, #9e7938)" />
           <div>
             <div style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--color-text-main)" }}>
               {mapAddress}

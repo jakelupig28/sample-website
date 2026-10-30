@@ -155,12 +155,76 @@
   font-size: 0.775rem;
   color: #78736b;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+.copyrightBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.copyrightText {
+  color: #8a857d;
+  font-size: 0.775rem;
+  margin: 0;
+}
+
+.creatorCredit {
+  color: #9c968c;
+  font-size: 0.785rem;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.creatorName {
+  color: var(--color-accent-gold-light);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color var(--transition-fast);
+}
+
+.creatorName:hover {
+  color: #ffffff;
 }
 
 .bottomLegalLinks {
   display: flex;
   gap: 1.5rem;
+}
+
+.backToTopBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1e1e1c;
+  color: #d1cbc2;
+  border: 1px solid #333330;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  touch-action: manipulation;
+}
+
+.backToTopBtn:hover {
+  background: #282824;
+  color: #ffffff;
+  border-color: var(--color-accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.backToTopBtn:hover svg {
+  transform: translateY(-2px);
+}
+
+.backToTopBtn svg {
+  transition: transform var(--transition-fast);
+  color: var(--color-accent-gold);
 }
 
 @media (max-width: 992px) {
@@ -178,5 +242,15 @@
   .bottomBar {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .copyrightBlock {
+    align-items: center;
+  }
+  .bottomLegalLinks {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }

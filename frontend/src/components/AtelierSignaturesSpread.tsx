@@ -60,7 +60,7 @@ export default function AtelierSignaturesSpread() {
               fontWeight: 700,
               textTransform: "uppercase",
               letterSpacing: "0.14em",
-              color: "var(--color-accent-terracotta)",
+              color: "var(--color-accent-gold)",
               display: "block",
               marginBottom: "0.75rem",
               textAlign: "center",

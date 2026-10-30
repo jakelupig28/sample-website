@@ -6,7 +6,6 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { Sparkles, Award, Compass, Leaf, ShieldCheck, ArrowUpRight, X, Phone, Check } from "lucide-react";
 import styles from "../../components/AboutSection.module.css";
-import ScrollReveal from "../../components/ScrollReveal";
 import { TEAM_MEMBERS, SALON_INFO, TeamMember } from "../../data/salonData";
 
 interface AtelierSpace {
@@ -194,236 +193,230 @@ export default function AboutPage() {
       </section>
 
       {/* In-depth Story Section */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <section className="section-padding">
-          <div className="container">
-            <div className={styles.storyGrid}>
-              <div className={styles.storyVisuals}>
-                <div className={styles.storyMainImageWrapper} style={{ borderRadius: "16px", overflow: "hidden" }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1607006411601-775c8cc632dc?auto=format&fit=crop&w=1000&q=80"
-                    alt="ÉLAN Salon Interior"
-                    className={styles.storyMainImage}
-                  />
-                </div>
-
-                <div className={styles.storyDetailCard} style={{ borderRadius: "14px", overflow: "hidden" }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1608248597359-009187cbcfca?auto=format&fit=crop&w=600&q=80"
-                    alt="Organic Elixirs"
-                    className={styles.storyDetailImage}
-                  />
-                </div>
-
-                <div className={styles.storyQuoteCard} style={{ borderRadius: "14px" }}>
-                  <p className={styles.storyQuoteText}>
-                    &ldquo;We don't merely change hair; we craft an enduring identity that elevates how you carry yourself in the world.&rdquo;
-                  </p>
-                  <span className={styles.storyQuoteAuthor}>— Creative Director & Founder</span>
-                </div>
+      <section className="section-padding">
+        <div className="container">
+          <div className={styles.storyGrid}>
+            <div className={styles.storyVisuals}>
+              <div className={styles.storyMainImageWrapper} style={{ borderRadius: "16px", overflow: "hidden" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1607006411601-775c8cc632dc?auto=format&fit=crop&w=1000&q=80"
+                  alt="ÉLAN Salon Interior"
+                  className={styles.storyMainImage}
+                />
               </div>
 
-              <div className={styles.storyContent}>
-                <h2 className="section-title">An Antidote to the Fast-Beauty Era</h2>
-                <p className={styles.storyParagraph}>
-                  Traditional salons are notoriously overbooked, noisy, and reliant on harsh synthetic chemicals that degrade
-                  hair integrity over time. In 2021, ÉLAN was founded to craft the exact opposite: an intimate,
-                  unhurried retreat where every client receives dedicated, one-on-one attention.
+              <div className={styles.storyDetailCard} style={{ borderRadius: "14px", overflow: "hidden" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1608248597359-009187cbcfca?auto=format&fit=crop&w=600&q=80"
+                  alt="Organic Elixirs"
+                  className={styles.storyDetailImage}
+                />
+              </div>
+
+              <div className={styles.storyQuoteCard} style={{ borderRadius: "14px" }}>
+                <p className={styles.storyQuoteText}>
+                  &ldquo;We don't merely change hair; we craft an enduring identity that elevates how you carry yourself in the world.&rdquo;
                 </p>
-                <p className={styles.storyParagraph}>
-                  Our colorists do not pull foils and run away to another client. We formulate custom color recipes inspired
-                  by fine art glazing, incorporating patented bio-active peptides that rebuild damaged keratin bonds during the coloring process.
-                </p>
+                <span className={styles.storyQuoteAuthor}>— Creative Director & Founder</span>
+              </div>
+            </div>
 
-                <div className={styles.pillarList}>
-                  <div className={styles.pillarItem}>
-                    <div className={styles.pillarNumber}>I</div>
-                    <div>
-                      <h4 className={styles.pillarTitle}>Cranial Architecture</h4>
-                      <p className={styles.pillarDesc}>
-                        Every haircut is tailored in dry motion to work seamlessly with natural hair growth directions, skull contours, and daily styling capability.
-                      </p>
-                    </div>
+            <div className={styles.storyContent}>
+              <h2 className="section-title">An Antidote to the Fast-Beauty Era</h2>
+              <p className={styles.storyParagraph}>
+                Traditional salons are notoriously overbooked, noisy, and reliant on harsh synthetic chemicals that degrade
+                hair integrity over time. In 2021, ÉLAN was founded to craft the exact opposite: an intimate,
+                unhurried retreat where every client receives dedicated, one-on-one attention.
+              </p>
+              <p className={styles.storyParagraph}>
+                Our colorists do not pull foils and run away to another client. We formulate custom color recipes inspired
+                by fine art glazing, incorporating patented bio-active peptides that rebuild damaged keratin bonds during the coloring process.
+              </p>
+
+              <div className={styles.pillarList}>
+                <div className={styles.pillarItem}>
+                  <div className={styles.pillarNumber}>I</div>
+                  <div>
+                    <h4 className={styles.pillarTitle}>Cranial Architecture</h4>
+                    <p className={styles.pillarDesc}>
+                      Every haircut is tailored in dry motion to work seamlessly with natural hair growth directions, skull contours, and daily styling capability.
+                    </p>
                   </div>
+                </div>
 
-                  <div className={styles.pillarItem}>
-                    <div className={styles.pillarNumber}>II</div>
-                    <div>
-                      <h4 className={styles.pillarTitle}>Zero-Ammonia Longevity</h4>
-                      <p className={styles.pillarDesc}>
-                        We prioritize MEA-reduced, organic botanical formulas that impart luminous multi-tonal shine without irritation, fading, or brassiness.
-                      </p>
-                    </div>
+                <div className={styles.pillarItem}>
+                  <div className={styles.pillarNumber}>II</div>
+                  <div>
+                    <h4 className={styles.pillarTitle}>Zero-Ammonia Longevity</h4>
+                    <p className={styles.pillarDesc}>
+                      We prioritize MEA-reduced, organic botanical formulas that impart luminous multi-tonal shine without irritation, fading, or brassiness.
+                    </p>
                   </div>
+                </div>
 
-                  <div className={styles.pillarItem}>
-                    <div className={styles.pillarNumber}>III</div>
-                    <div>
-                      <h4 className={styles.pillarTitle}>Follicular Wellness</h4>
-                      <p className={styles.pillarDesc}>
-                        Radiant hair cannot grow from an inflamed scalp. Our Japanese Head Spa therapies de-stress the mind while purifying the micro-biome.
-                      </p>
-                    </div>
+                <div className={styles.pillarItem}>
+                  <div className={styles.pillarNumber}>III</div>
+                  <div>
+                    <h4 className={styles.pillarTitle}>Follicular Wellness</h4>
+                    <p className={styles.pillarDesc}>
+                      Radiant hair cannot grow from an inflamed scalp. Our Japanese Head Spa therapies de-stress the mind while purifying the micro-biome.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
+      </section>
 
       {/* Atelier Spaces Tour (Expanded to 6 Spaces with Interactive Container Modals) */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <section className="section-padding" style={{ background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">A Tour of The Atelier Sanctuary</h2>
-              <p className="section-subtitle">
-                Designed with warm limestone, brushed brass, natural linen, and acoustic soundproofing to provide a calm haven away from Manhattan streets. Click any space to explore details.
-              </p>
-            </div>
+      <section className="section-padding" style={{ background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">A Tour of The Atelier Sanctuary</h2>
+            <p className="section-subtitle">
+              Designed with warm limestone, brushed brass, natural linen, and acoustic soundproofing to provide a calm haven away from Manhattan streets. Click any space to explore details.
+            </p>
+          </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2rem" }}>
-              {spaces.map((sp, i) => (
-                <div
-                  key={i}
-                  style={{
-                    background: "#ffffff",
-                    borderRadius: "16px",
-                    overflow: "hidden",
-                    border: "1px solid var(--color-border)",
-                    boxShadow: "var(--shadow-sm)",
-                    transition: "all var(--transition-smooth)",
-                    cursor: "pointer",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                  onClick={() => setSelectedSpace(sp)}
-                  title="Click to view space architectural profile and amenities"
-                >
-                  <div style={{ width: "100%", aspectRatio: "16/11", overflow: "hidden", position: "relative" }}>
-                    <img
-                      src={sp.image}
-                      alt={sp.title}
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                      style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.6s ease" }}
-                    />
-                    <div
-                      style={{
-                        position: "absolute",
-                        bottom: "0.85rem",
-                        left: "0.85rem",
-                        background: "rgba(24, 22, 21, 0.8)",
-                        backdropFilter: "blur(6px)",
-                        color: "#ffffff",
-                        padding: "0.3rem 0.75rem",
-                        borderRadius: "8px",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      {sp.category}
-                    </div>
-                  </div>
-                  <div style={{ padding: "1.75rem", display: "flex", flexDirection: "column", flex: 1 }}>
-                    <h3 style={{ fontSize: "1.25rem", color: "var(--color-text-main)", marginBottom: "0.5rem", fontFamily: "var(--font-serif)" }}>
-                      {sp.title}
-                    </h3>
-                    <p style={{ fontSize: "0.875rem", color: "var(--color-text-muted)", lineHeight: "1.6", fontWeight: 300, marginBottom: "1.25rem", flex: 1 }}>
-                      {sp.desc}
-                    </p>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid #f0ebe2", paddingTop: "0.85rem" }}>
-                      <span style={{ fontSize: "0.8rem", color: "var(--color-accent-terracotta)", fontWeight: 700, display: "flex", alignItems: "center", gap: "0.35rem" }}>
-                        <span>Check Space</span>
-                        <ArrowUpRight size={14} />
-                      </span>
-                    </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2rem" }}>
+            {spaces.map((sp, i) => (
+              <div
+                key={i}
+                style={{
+                  background: "#ffffff",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  border: "1px solid var(--color-border)",
+                  boxShadow: "var(--shadow-sm)",
+                  transition: "all var(--transition-smooth)",
+                  cursor: "pointer",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+                onClick={() => setSelectedSpace(sp)}
+                title="Click to view space architectural profile and amenities"
+              >
+                <div style={{ width: "100%", aspectRatio: "16/11", overflow: "hidden", position: "relative" }}>
+                  <img
+                    src={sp.image}
+                    alt={sp.title}
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.6s ease" }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "0.85rem",
+                      left: "0.85rem",
+                      background: "rgba(24, 22, 21, 0.8)",
+                      backdropFilter: "blur(6px)",
+                      color: "#ffffff",
+                      padding: "0.3rem 0.75rem",
+                      borderRadius: "8px",
+                      fontSize: "0.7rem",
+                      fontWeight: 700,
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {sp.category}
                   </div>
                 </div>
-              ))}
-            </div>
+                <div style={{ padding: "1.75rem", display: "flex", flexDirection: "column", flex: 1 }}>
+                  <h3 style={{ fontSize: "1.25rem", color: "var(--color-text-main)", marginBottom: "0.5rem", fontFamily: "var(--font-serif)" }}>
+                    {sp.title}
+                  </h3>
+                  <p style={{ fontSize: "0.875rem", color: "var(--color-text-muted)", lineHeight: "1.6", fontWeight: 300, marginBottom: "1.25rem", flex: 1 }}>
+                    {sp.desc}
+                  </p>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid #f0ebe2", paddingTop: "0.85rem" }}>
+                    <span style={{ fontSize: "0.8rem", color: "var(--color-accent-terracotta)", fontWeight: 700, display: "flex", alignItems: "center", gap: "0.35rem" }}>
+                      <span>Check Space</span>
+                      <ArrowUpRight size={14} />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
+      </section>
 
       {/* Master Stylists Team Showcase */}
-      <ScrollReveal animation="fade-up" duration={800}>
-        <section className="section-padding">
-          <div className="container">
-            <div className={styles.teamHeader}>
-              <h2 className="section-title">The Master Stylists</h2>
-              <p className="section-subtitle">
-                Internationally trained artists dedicated to individual consultation and unmatched technical precision. Click to view background and credentials.
-              </p>
-            </div>
+      <section className="section-padding">
+        <div className="container">
+          <div className={styles.teamHeader}>
+            <h2 className="section-title">The Master Stylists</h2>
+            <p className="section-subtitle">
+              Internationally trained artists dedicated to individual consultation and unmatched technical precision. Click to view background and credentials.
+            </p>
+          </div>
 
-            <div className={styles.teamGrid}>
-              {TEAM_MEMBERS.map((member) => (
-                <div
-                  key={member.id}
-                  className={styles.teamCard}
-                  style={{ cursor: "pointer", borderRadius: "16px", overflow: "hidden" }}
-                  onClick={() => setSelectedArtisan(member)}
-                  title="Click to read full stylist biography and credentials"
-                >
-                  <div className={styles.teamImageWrapper}>
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className={styles.teamImage}
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
-                    <span className={styles.teamExpBadge}>{member.experience}</span>
-                  </div>
-                  <div className={styles.teamBody}>
-                    <h3 className={styles.teamName}>{member.name}</h3>
-                    <span className={styles.teamRole}>{member.role}</span>
-                    <span className={styles.teamSpecialty}>{member.specialty}</span>
-                    <p className={styles.teamBio}>{member.bio}</p>
-                    <div className={styles.teamAccolade}>
-                      <Award size={15} color="var(--color-accent-terracotta, #cb6d3e)" />
-                      <span>{member.accolades}</span>
-                    </div>
+          <div className={styles.teamGrid}>
+            {TEAM_MEMBERS.map((member) => (
+              <div
+                key={member.id}
+                className={styles.teamCard}
+                style={{ cursor: "pointer", borderRadius: "16px", overflow: "hidden" }}
+                onClick={() => setSelectedArtisan(member)}
+                title="Click to read full stylist biography and credentials"
+              >
+                <div className={styles.teamImageWrapper}>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className={styles.teamImage}
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                  <span className={styles.teamExpBadge}>{member.experience}</span>
+                </div>
+                <div className={styles.teamBody}>
+                  <h3 className={styles.teamName}>{member.name}</h3>
+                  <span className={styles.teamRole}>{member.role}</span>
+                  <span className={styles.teamSpecialty}>{member.specialty}</span>
+                  <p className={styles.teamBio}>{member.bio}</p>
+                  <div className={styles.teamAccolade}>
+                    <Award size={15} color="var(--color-accent-gold, #9e7938)" />
+                    <span>{member.accolades}</span>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Atelier Heritage Action Banner */}
-            <div
-              style={{
-                marginTop: "4.5rem",
-                background: "var(--color-bg-dark)",
-                borderRadius: "16px",
-                padding: "3.5rem 2.5rem",
-                textAlign: "center",
-                color: "#ffffff",
-              }}
-            >
-              <h3 style={{ fontSize: "2.35rem", marginBottom: "1rem", color: "var(--color-bg-primary)" }}>
-                Experience The ÉLAN Standard
-              </h3>
-              <p style={{ maxWidth: "550px", margin: "0 auto 2rem auto", color: "#c9c3ba", fontSize: "1rem", fontWeight: 300 }}>
-                Explore our full ritual collection or connect directly with our Greenwich Village concierge.
-              </p>
-              <div style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
-                <Link href="/services" className="btn btn-terracotta">
-                  <span>Explore Salon Offerings</span>
-                </Link>
-                <Link href="/contact" className="btn btn-secondary" style={{ color: "#ffffff", borderColor: "#444" }}>
-                  <span>Connect With Concierge</span>
-                </Link>
               </div>
+            ))}
+          </div>
+
+          {/* Atelier Heritage Action Banner */}
+          <div
+            style={{
+              marginTop: "4.5rem",
+              background: "var(--color-bg-dark)",
+              borderRadius: "16px",
+              padding: "3.5rem 2.5rem",
+              textAlign: "center",
+              color: "#ffffff",
+            }}
+          >
+            <h3 style={{ fontSize: "2.35rem", marginBottom: "1rem", color: "var(--color-bg-primary)" }}>
+              Experience The ÉLAN Standard
+            </h3>
+            <p style={{ maxWidth: "550px", margin: "0 auto 2rem auto", color: "#c9c3ba", fontSize: "1rem", fontWeight: 300 }}>
+              Explore our full ritual collection or connect directly with our Greenwich Village concierge.
+            </p>
+            <div style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
+              <Link href="/services" className="btn btn-terracotta">
+                <span>Explore Salon Offerings</span>
+              </Link>
+              <Link href="/contact" className="btn btn-secondary" style={{ color: "#ffffff", borderColor: "#444" }}>
+                <span>Connect With Concierge</span>
+              </Link>
             </div>
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
+      </section>
 
       {/* Interactive Space Container Modal (Fully Responsive on Tablet & Mobile) */}
       {selectedSpace && (
@@ -496,7 +489,7 @@ export default function AboutPage() {
                   <span
                     style={{
                       fontSize: "0.775rem",
-                      color: "var(--color-accent-terracotta, #cb6d3e)",
+                      color: "var(--color-accent-gold, #9e7938)",
                       fontWeight: 700,
                       textTransform: "uppercase",
                       letterSpacing: "0.14em",
@@ -590,15 +583,15 @@ export default function AboutPage() {
                             width: "16px",
                             height: "16px",
                             borderRadius: "50%",
-                            background: "rgba(203, 109, 62, 0.15)",
+                            background: "rgba(158, 121, 56, 0.15)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            color: "var(--color-accent-terracotta)",
+                            color: "var(--color-accent-gold)",
                             flexShrink: 0,
                           }}
                         >
-                          <Check size={10} strokeWidth={3} />
+                          <Check size={10} strokeWidth={2.5} />
                         </div>
                         <span>{amenity}</span>
                       </div>
@@ -695,7 +688,7 @@ export default function AboutPage() {
                   <span
                     style={{
                       fontSize: "0.75rem",
-                      color: "var(--color-accent-terracotta, #cb6d3e)",
+                      color: "var(--color-accent-gold, #9e7938)",
                       fontWeight: 700,
                       textTransform: "uppercase",
                       letterSpacing: "0.12em",
@@ -790,9 +783,7 @@ export default function AboutPage() {
         </div>
       )}
 
-      <ScrollReveal animation="fade-up" duration={720}>
-        <Footer />
-      </ScrollReveal>
+      <Footer />
     </main>
   );
 }

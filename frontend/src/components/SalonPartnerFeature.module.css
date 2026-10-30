@@ -1,5 +1,5 @@
 .section {
-  padding: 6.5rem 0;
+  padding: 3.5rem 0;
   background: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
 }
@@ -7,7 +7,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 4.5rem;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -16,7 +16,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--color-accent-terracotta);
+  color: var(--color-accent-gold);
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -27,14 +27,14 @@
   line-height: 1.15;
   color: var(--color-text-main);
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .pointsList {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .pointItem {
@@ -47,14 +47,14 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--color-accent-terracotta);
+  background: var(--color-accent-gold);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   margin-top: 0.2rem;
-  box-shadow: 0 4px 10px rgba(203, 109, 62, 0.25);
+  box-shadow: 0 4px 10px rgba(166, 127, 59, 0.25);
 }
 
 .pointTitle {

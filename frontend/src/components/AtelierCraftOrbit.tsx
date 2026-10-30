@@ -5,6 +5,7 @@ import { ArrowRight, Sparkles, Clock, ShieldCheck, Check, Layers, ChevronRight }
 import styles from "./AtelierCraftOrbit.module.css";
 import { useBooking } from "../context/BookingContext";
 import { SERVICES_DATA, ServiceItem } from "../data/salonData";
+import ScrollReveal from "./ScrollReveal";
 
 interface ServiceMotionStep {
   id: string;
@@ -174,24 +175,27 @@ export default function AtelierCraftOrbit() {
     <section className={styles.motionSection} id="atelier-services-motion">
       <div className="container">
         {/* Section Header */}
-        <div className={styles.sectionHeader}>
-          <div className={styles.eyebrowPill}>
-            <Sparkles size={13} strokeWidth={1.5} />
-            <span>Bespoke Salon Craft In Motion</span>
+        <ScrollReveal animation="fade-up">
+          <div className={styles.sectionHeader}>
+            <div className={styles.eyebrowPill}>
+              <Sparkles size={13} strokeWidth={1.5} />
+              <span>Bespoke Salon Craft In Motion</span>
+            </div>
+            <h2 className={styles.sectionTitle}>
+              Atelier Signature Services In Motion
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              Explore how master stylists combine editorial precision, clean botanicals, and scientific scalp hydrotherapy through fluid, choreographed craft.
+            </p>
           </div>
-          <h2 className={styles.sectionTitle}>
-            Atelier Signature Services In Motion
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            Explore how master stylists combine editorial precision, clean botanicals, and scientific scalp hydrotherapy through fluid, choreographed craft.
-          </p>
-        </div>
+        </ScrollReveal>
 
         {/* 2-Column Split Stage */}
         <div className={styles.stageGrid}>
           {/* Left Column: Interactive Visual Showcase Stage */}
-          <div className={styles.visualColumn}>
-            <div className={styles.visualStageCard}>
+          <ScrollReveal animation="slide-right">
+            <div className={styles.visualColumn}>
+              <div className={styles.visualStageCard}>
               <img
                 src={currentStep.image}
                 alt={currentStep.name}
@@ -266,8 +270,10 @@ export default function AtelierCraftOrbit() {
               ))}
             </div>
           </div>
+        </ScrollReveal>
 
-          {/* Right Column: Kinetic Narrative, Specs & Action Panel */}
+        {/* Right Column: Kinetic Narrative, Specs & Action Panel */}
+        <ScrollReveal animation="slide-left" delay={120}>
           <div className={styles.narrativeColumn}>
             <div className={styles.narrativeCard}>
               <div className={styles.cardHeader}>
@@ -337,7 +343,8 @@ export default function AtelierCraftOrbit() {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
+      </div>
       </div>
     </section>
   );

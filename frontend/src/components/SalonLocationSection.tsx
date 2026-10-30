@@ -7,27 +7,33 @@ import GoogleMapEmbed from "./GoogleMapEmbed";
 import SocialLinks from "./SocialLinks";
 import { SALON_INFO } from "../data/salonData";
 import styles from "./SalonLocationSection.module.css";
+import ScrollReveal from "./ScrollReveal";
 
 export default function SalonLocationSection() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">The Greenwich Village Sanctuary</h2>
-          <p className="section-subtitle">
-            Quietly situated at 442 Hudson Street between Morton and St. Luke&apos;s Place. We invite you to step away
-            from the city rhythm into our serene, single-chair haven.
-          </p>
-        </div>
+        <ScrollReveal animation="fade-up">
+          <div className="section-header">
+            <h2 className="section-title">The Greenwich Village Sanctuary</h2>
+            <p className="section-subtitle">
+              Quietly situated at 442 Hudson Street between Morton and St. Luke&apos;s Place. We invite you to step away
+              from the city rhythm into our serene, single-chair haven.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className={styles.grid}>
           {/* Left Column: Interactive Google Maps Embed */}
-          <div className={styles.mapCol}>
-            <GoogleMapEmbed fillContainer={true} />
-          </div>
+          <ScrollReveal animation="slide-right">
+            <div className={styles.mapCol}>
+              <GoogleMapEmbed fillContainer={true} />
+            </div>
+          </ScrollReveal>
 
           {/* Right Column: Atelier Hours, Direct Channels & Socials */}
-          <div className={styles.infoCard}>
+          <ScrollReveal animation="slide-left" delay={100}>
+            <div className={styles.infoCard}>
             <div>
               <div className={styles.cardHeader}>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.55rem" }}>
@@ -85,7 +91,8 @@ export default function SalonLocationSection() {
               <ArrowUpRight size={15} strokeWidth={1.5} />
             </Link>
           </div>
-        </div>
+        </ScrollReveal>
+      </div>
       </div>
     </section>
   );
